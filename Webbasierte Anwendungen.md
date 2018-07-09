@@ -1,4 +1,4 @@
-# Webbasierte Anwendungen
+Webbasierte Anwendungen
 
 ## Grundlagen (Vorlesung 1
 
@@ -252,7 +252,7 @@ Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen
 
 #### Charakteristika 4 - Verlinkung
 
-**Definition: Web-Applikationen haben Verbindungen zu anderen WebApplikationen.(Hypertext)**
+**Definition: Web-Applikationen haben Verbindungen zu anderen WebApplikationen.(Hypertext) **
 
 - Hyptertext-Struktur
 
@@ -267,7 +267,7 @@ Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen
   - Verlieren des Orts- und Richtungssinns und kognitive Belastung 
 
 
-#### Charakteristika 5 - Darstellung 
+####Charakteristika 5 - Darstellung 
 
 **Definition: Die Darstellung (Presentation) einer Web-Applikation ist mit ein wichtiger Faktor bei der Benutzerakzeptanz**
 
@@ -324,6 +324,295 @@ Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen
 | Semantische Web-Anwendungen       | Semantische Web-Anwendungen bereiten ihre Inhalte so auf, dass sie auch durch Algorithmen in ihrer Bedeutung ausgewertet werden können. | globale Datenanlayse für Unwetterwarnung, Grippewellen |
 | Progressive Web-Anwendungen       | Progressive Web-Anwendungen erfüllen Charakteristika, von Web-Anwendungen und nutzen Charakteristika von nativen Anwendungen. | Als Apps erscheinende Web-Anwendungen    |
 
+###app-manifest
+
+**Definition: Das app-manifest ist eine Konfigurationsdatei, welche geeigneten Geräten zeigt, dass es sich bei der Webanwendung um eine Webanwendung handelt, die als App genutzt werden kann.**
+
+## HTML (Vorlesung 3)
+
+**Definition: HTML (HyperText Markup Language) ist eine Auszeichnungssprache mit der Inhalte von Seiten strukturiert und semantisch angereichert werden können**
+
+HTML V1.0 1992
+
+__Auszeichnungssprache (Markup Language)__ 
+- Beschreibt die Inhalte eines Dokuments
+  -  Legt die Struktur der Inhalte fest (nicht das Erscheinungsbild)
+  -  Kann die Semantik (Bedeutung) der Inhalte festlegen
+
+- Implementiert keine Algorithmen 
+
+#### HTML Struktur
+
+##### Doctype 
+
+Doctype:  Der HTML Doctype gibt den Dokumententyp eines HTML Dokuments an	
+
+```html
+  <!DOCTYPE html>
+```
+
+##### Seitenaufbau
+
+  <html> Root-Tag – Umfasst den gesamten Dokumenteninhalt
+  <head> Dokumenten-Kopf – Titel, Metadaten, Includes,..
+  <body> Dokumenten-Körper – Enthält die eigentlichen Inhalte
+
+  ```html
+  <html>
+  	<head>
+  		…
+  	</head>
+  	<body>
+  		…
+  	</body>
+  </html>
+  ```
+
+###### Head
+
+<meta>: Gibt Meta-Informationen an
+charset: Verwendete Zeichenkodierung auf der Seite
+viewport: Zu verwendende Breite und Standard-Zoom (Multi-Devices)
+Allgemein: Meta-Informationen zum Inhalt (Keywords, Beschreibung,…)
+<link>: Angabe wichtiger externen Ressourcen
+<script>: Einbettung oder Einbindung von Skripten 
+
+```html
+<head>
+	<title>Titel der Web-Anwendung</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name=“Name“ content=“Wert“>
+	<link href =“Name“ rel=“Name“ type=“Name“>
+	<script>…</script>
+</head>
+```
+
+##### Strukturelle Tags
+
+| Tag       | Beschreibung                             |
+| --------- | ---------------------------------------- |
+| <header>  | definiert den Kopfbereich einer Seite oder eines Abschnitts |
+| <footer>  | definiert die Fußzeile einer Seite oder eines Abschnitts |
+| <nav>     | definiert einen Navigationsbereich einer Seite oder eines Abschnitts |
+| <section> | definiert einen logischen Abschnitt einer Seite oder einer Gruppe von Inhalten |
+| <article> | definiert einen Artikel oder ein in sich abgeschlossenes Inhaltselement |
+| <aside>   | definiert sekundäre oder ähnliche Inhalte |
+| <p>       | definiert einen Absatz (zusammengehörigen Text) |
+| <br>      | erzeugt einen Zeilenumbruch              |
+
+![Strukturelle Tags](Ressourcen\Strukturelle Tags.PNG)
 
 
+
+##### Hyperlinks
+
+```html
+Seiten Link: Verweis auf ein Element der selben Seite mit einer ID
+<a href=“#ziel“>Seiten Link</a>
+<p id=“ziel“>Interner Absatz mit Ziel</p>
+
+Links in der selben Anwendung
+<a href=“\unterseite“>Link in der selben Anwendung</a>
+
+Externe Links
+<a href=“https:\\www.seite.de“>Externer Link</a>
+
+```
+
+##### Tabellen
+
+<table>: Die enthaltenen Elemente stellen eine gemeinsame Tabelle dar
+<tr>: Umfasst alle Elemente einer Tabellen-Zeile
+<th>: Eine Zelle einer Kopfzeile
+<td>: Eine Zelle einer Tabellen-Spalte
+
+```html
+<table>
+	<tr>
+		<th colspan="2"> Kopfzeile</th>
+	</tr>
+	<tr><td>Zelle links</td><td> Zelle rechts</td></tr>
+</table>
+```
+
+![TabelleExample](C:\Users\Andre\Desktop\WBA-Vorlesung\Zusammenfassung\Ressourcen\TabelleExample.PNG)
+
+##### Listen
+
+<ul>: Eine Liste ungeordneter Elemente
+<ol>: Eine Liste geordneter (nummerierter) Elemente
+<li>: Ein Listeneintrag für un-, geordnete Listen
+<dl>: Eine Liste für Definitionen 
+<dt>: Term-Eintrag in einer Definitionsliste
+<dd>: Erläuterungs-Eintrag in einer Definitionsliste
+
+```html
+<ul><li>Ein ungeordneter Eintrag</li></ul>
+<ol><li>Ein geordneter Eintrag</li></ol>
+<dl>
+	<dt>Term</dt>
+	<dd>Definition</dd>
+</dl>
+```
+
+#### HTML Formulare
+
+**Definition: HTML Formulare dienen der Eingabe von Daten durch Benutzer. Sie Werden durch den Browser an eine angegebene Adresse versendet und müssen vom Empfänger verarbeitet werden.**
+
+<form>: Umschließt alle Elemente eines Formulars und legt Attribute fest
+**Attribute:**
+action: URL an welche die Daten aus dem Formular gesendet werden
+method: bestimmt die HTTP-Methode die zum Versand genutzt wird
+enctype: bestimmt den Mime-Type in dem Versendet wird
+
+```html
+<form action=“URL“ method=“POST|GET“ enctype=“TRANSFERFORMAT“>
+…
+</form>
+```
+
+##### Methoden
+
+- **GET**
+  - Formulardaten werden als Parameterstring an die URL angehängt
+  - Passwörter im Klartext
+  - Hyperlink auf Formularparameter möglich
+  - Daten als Favorit möglich
+  - Längenbegrenzung (ca. 3000 Zeichen)
+- **POST**
+  - Formulardaten werden im Body des HTTP-Requests codiert
+  - unbegrenzte Datenmenge
+  - Daten als Favoriten speichern nicht möglich
+
+##### Eingabeelemente
+
+ <input> Eingabeelement mit unterschiedlicher Darstellung nach Typ:
+
+
+| Type       | Beschreibung                             | Beispiel                                 |
+| ---------- | ---------------------------------------- | ---------------------------------------- |
+| text       | einzeiliges Eingabefeld                  | <input type="text" name=s>               |
+| password   | einzeiliges Eingabefeld mit nicht sichtbaren Zeichen | <input type="password" name=s>           |
+| number     | ein Zahlenwert                           | <input type="number" name=s>             |
+| range      | ein Zahlenwert aus einem bereich         | <input type="range" name=s min="0" max="10"> |
+| color      | Farbangaben                              | <input type="color" name=s>              |
+| email      | Eine E-Mail Adresse                      | <input type="email" name=s>              |
+| file       | Eine Datei                               | <input type="color" name=s>              |
+| tel        | Eine Telefonnummer                       | <input type="file" name=s>               |
+| url        | Eine URL                                 | <input type="url" name=s>                |
+| checkbox   | es können beliebig viele Optionen aktiviert werden | <input type="checkbox" name="s" value="A"> <br> <input type="checkbox" name="s" value="B"> |
+| radio      | es kann nur eine einzige Option aktiviert werden | <input type="radio" name="s" value="male"> <br> <input type="radio" name="s" value="female"> |
+| <select>   | Drop-Down-Liste mit <option> Elementen   | <select> <option value="A"> A </option> </select> |
+| <textarea> | Ein mehrzeiliges Texteingabefeld         | <textarea rows="4" cols="50"> ...</textarea> |
+
+
+**Browser können:** 
+- Auf den Datentyp abgestimmte Eingabeelemente anzeigen
+- vor dem Absenden prüfen, ob Werte für den angegebenen Typ gültig sind.
+
+##### Button
+
+###### Formular Buttons
+
+<input>: Buttons in Formularen ins Eingabeelemente mit Typ:
+submit: Absenden des Formulars
+reset: Zurücksetzen aller Inhalte auf den Ladezustand
+
+```html
+<form action="/action_page.php">
+	First name:<br>
+	<input type="text" name="firstname" value="Mickey"><br>
+	Last name:<br>
+	<input type="text" name="lastname" value="Mouse"><br><br>
+<input type="submit" value="Submit">
+</form> 
+```
+
+​	![formularButton](.\Ressourcen\formularButton.PNG)
+
+###### Script Button
+
+<button>: Buttons für die Verwendung mit Skripten
+
+```html
+<button onclick="myFunction()">Click me</button>
+```
+
+##### Gestaltung
+
+<label>: Beschriftung für ein Eingabeelement
+<fieldset>: Eingabeelemente gruppieren
+<legend>: Beschriftung für eine Gruppierung
+
+```html
+<fieldset>
+	<legend>Personalia:</legend>
+	<label for="name">Name:</label>
+	<input id="name" type="text"><br>
+	<label for="email">Email:</label>
+	<input id="email" type="text"><br>
+	<label for="birth">Date of birth:</label>
+	<input id="birth" type="text">
+</fieldset>
+```
+
+![gestaltungLabel](.\Ressourcen\gestaltungLabel.PNG)
+
+#### Mediadatein
+
+##### Bilder
+
+<picture>: Definiert ein Bild Objekt
+<source>: Definiert eine Bildquelle
+media: Gibt an, wann die Bildquelle verwendet werden soll
+srcset: URL zum Bild
+<img>: Fallback-Tag für alte Browser
+alt: Alternativtext; angezeigt, wenn das Bild nicht verfügbar ist
+
+````html
+<picture>
+	<source media="(min-width: 650px)" srcset="a.jpg">
+	<source media="(min-width: 465px)" srcset="b.jpg">
+	<img src="c.jpg" alt="Letters">
+</picture>
+````
+
+##### Audio
+
+
+<audio>: Definiert ein Audio-Objekt
+<source>: Definiert eine Audioquelle
+src: URL zur Audiodatei
+tyoe: Tyo der Audiodatei
+```html
+<audio controls>
+	<source src=„sound.ogg" type="audio/ogg">
+	<source src=„sound.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+</audio> 	
+```
+
+- Der Browser verwendet die erste Quelle aus der Liste, die er versteht
+- Kontrollelemente und Autostart können definiert werden
+- Kein Plugin notwendig
+
+##### Video
+
+<video>: Definiert ein Video-Object
+<source>: Definiert eine Videoquelle
+src: URL zur Videodatei
+type: Typ der Datei
+
+```html
+<video width="320" height="240" controls>
+	<source src="movie.mp4" type="video/mp4">
+	<source src="movie.ogg" type="video/ogg">
+	Your browser does not support the video tag.
+</video>
+```
+
+- Der Browser verwendet die erste Quelle aus der Liste, die er versteht
+- Kontrollelemente und Autostart können definiert werden
+- Kein Plugin notwendig
 
