@@ -549,7 +549,7 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 </form> 
 ```
 
-​	![formularButton](.\Ressourcen\formularButton.PNG?raw=true)
+​	![formularButton](Ressourcen\formularButton.PNG?raw=true)
 
 ###### Script Button
 
