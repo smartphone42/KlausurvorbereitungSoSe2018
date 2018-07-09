@@ -371,10 +371,15 @@ Doctype:  Der HTML Doctype gibt den Dokumententyp eines HTML Dokuments an
 ###### Head
 
 \<meta>: Gibt Meta-Informationen an
+
 charset: Verwendete Zeichenkodierung auf der Seite
+
 viewport: Zu verwendende Breite und Standard-Zoom (Multi-Devices)
+
 Allgemein: Meta-Informationen zum Inhalt (Keywords, Beschreibung,…)
+
 \<link>: Angabe wichtiger externen Ressourcen
+
 \<script>: Einbettung oder Einbindung von Skripten 
 
 ```html
@@ -423,8 +428,11 @@ Externe Links
 ##### Tabellen
 
 \<table>: Die enthaltenen Elemente stellen eine gemeinsame Tabelle dar
+
 \<tr>: Umfasst alle Elemente einer Tabellen-Zeile
+
 \<th>: Eine Zelle einer Kopfzeile
+
 \<td>: Eine Zelle einer Tabellen-Spalte
 
 ```html
@@ -441,11 +449,17 @@ Externe Links
 ##### Listen
 
 \<ul>: Eine Liste ungeordneter Elemente
+
 \<ol>: Eine Liste geordneter (nummerierter) Elemente
+
 \<li>: Ein Listeneintrag für un-, geordnete Listen
+
 \<dl>: Eine Liste für Definitionen 
+
 \<dt>: Term-Eintrag in einer Definitionsliste
+
 \<dd>: Erläuterungs-Eintrag in einer Definitionsliste
+
 
 ```html
 <ul><li>Ein ungeordneter Eintrag</li></ul>
@@ -461,9 +475,13 @@ Externe Links
 **Definition: HTML Formulare dienen der Eingabe von Daten durch Benutzer. Sie Werden durch den Browser an eine angegebene Adresse versendet und müssen vom Empfänger verarbeitet werden.**
 
 <form>: Umschließt alle Elemente eines Formulars und legt Attribute fest
+
 **Attribute:**
+
 action: URL an welche die Daten aus dem Formular gesendet werden
+
 method: bestimmt die HTTP-Methode die zum Versand genutzt wird
+
 enctype: bestimmt den Mime-Type in dem Versendet wird
 
 ```html
@@ -487,24 +505,24 @@ enctype: bestimmt den Mime-Type in dem Versendet wird
 
 ##### Eingabeelemente
 
- <input> Eingabeelement mit unterschiedlicher Darstellung nach Typ:
+ \<input> Eingabeelement mit unterschiedlicher Darstellung nach Typ:
 
 
 | Type       | Beschreibung                             | Beispiel                                 |
 | ---------- | ---------------------------------------- | ---------------------------------------- |
-| text       | einzeiliges Eingabefeld                  | <input type="text" name=s>               |
-| password   | einzeiliges Eingabefeld mit nicht sichtbaren Zeichen | <input type="password" name=s>           |
-| number     | ein Zahlenwert                           | <input type="number" name=s>             |
-| range      | ein Zahlenwert aus einem bereich         | <input type="range" name=s min="0" max="10"> |
-| color      | Farbangaben                              | <input type="color" name=s>              |
-| email      | Eine E-Mail Adresse                      | <input type="email" name=s>              |
-| file       | Eine Datei                               | <input type="color" name=s>              |
-| tel        | Eine Telefonnummer                       | <input type="file" name=s>               |
-| url        | Eine URL                                 | <input type="url" name=s>                |
-| checkbox   | es können beliebig viele Optionen aktiviert werden | <input type="checkbox" name="s" value="A"> <br> <input type="checkbox" name="s" value="B"> |
-| radio      | es kann nur eine einzige Option aktiviert werden | <input type="radio" name="s" value="male"> <br> <input type="radio" name="s" value="female"> |
-| <select>   | Drop-Down-Liste mit <option> Elementen   | <select> <option value="A"> A </option> </select> |
-| <textarea> | Ein mehrzeiliges Texteingabefeld         | <textarea rows="4" cols="50"> ...</textarea> |
+| text       | einzeiliges Eingabefeld                  | \<input type="text" name=s>               |
+| password   | einzeiliges Eingabefeld mit nicht sichtbaren Zeichen | \<input type="password" name=s>           |
+| number     | ein Zahlenwert                           | \<input type="number" name=s>             |
+| range      | ein Zahlenwert aus einem bereich         | \<input type="range" name=s min="0" max="10"> |
+| color      | Farbangaben                              | \<input type="color" name=s>              |
+| email      | Eine E-Mail Adresse                      | \<input type="email" name=s>              |
+| file       | Eine Datei                               | \<input type="color" name=s>              |
+| tel        | Eine Telefonnummer                       | \<input type="file" name=s>               |
+| url        | Eine URL                                 | \<input type="url" name=s>                |
+| checkbox   | es können beliebig viele Optionen aktiviert werden | \<input type="checkbox" name="s" value="A"> <br> \<input type="checkbox" name="s" value="B"> |
+| radio      | es kann nur eine einzige Option aktiviert werden | \<input type="radio" name="s" value="male"> <br> \<input type="radio" name="s" value="female"> |
+| \<select>   | Drop-Down-Liste mit <option> Elementen   | \<select> \<option value="A"> A \</option> \</select> |
+| \<textarea> | Ein mehrzeiliges Texteingabefeld         | \<textarea rows="4" cols="50"> ...\</textarea> |
 
 
 **Browser können:** 
@@ -515,8 +533,10 @@ enctype: bestimmt den Mime-Type in dem Versendet wird
 
 ###### Formular Buttons
 
-<input>: Buttons in Formularen ins Eingabeelemente mit Typ:
+\<input>: Buttons in Formularen ins Eingabeelemente mit Typ:
+
 submit: Absenden des Formulars
+
 reset: Zurücksetzen aller Inhalte auf den Ladezustand
 
 ```html
@@ -533,7 +553,7 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 
 ###### Script Button
 
-<button>: Buttons für die Verwendung mit Skripten
+\<button>: Buttons für die Verwendung mit Skripten
 
 ```html
 <button onclick="myFunction()">Click me</button>
@@ -541,9 +561,11 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 
 ##### Gestaltung
 
-<label>: Beschriftung für ein Eingabeelement
-<fieldset>: Eingabeelemente gruppieren
-<legend>: Beschriftung für eine Gruppierung
+\<label>: Beschriftung für ein Eingabeelement
+
+\<fieldset>: Eingabeelemente gruppieren
+
+\<legend>: Beschriftung für eine Gruppierung
 
 ```html
 <fieldset>
@@ -563,11 +585,16 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 
 ##### Bilder
 
-<picture>: Definiert ein Bild Objekt
-<source>: Definiert eine Bildquelle
+\<picture>: Definiert ein Bild Objekt
+
+\<source>: Definiert eine Bildquelle
+
 media: Gibt an, wann die Bildquelle verwendet werden soll
+
 srcset: URL zum Bild
-<img>: Fallback-Tag für alte Browser
+
+\<img>: Fallback-Tag für alte Browser
+
 alt: Alternativtext; angezeigt, wenn das Bild nicht verfügbar ist
 
 ````html
@@ -581,10 +608,12 @@ alt: Alternativtext; angezeigt, wenn das Bild nicht verfügbar ist
 ##### Audio
 
 
-<audio>: Definiert ein Audio-Objekt
-<source>: Definiert eine Audioquelle
+\<audio>: Definiert ein Audio-Objekt
+
+\<source>: Definiert eine Audioquelle
+
 src: URL zur Audiodatei
-tyoe: Tyo der Audiodatei
+type: Typ der Audiodatei
 ```html
 <audio controls>
 	<source src=„sound.ogg" type="audio/ogg">
@@ -599,9 +628,12 @@ tyoe: Tyo der Audiodatei
 
 ##### Video
 
-<video>: Definiert ein Video-Object
-<source>: Definiert eine Videoquelle
+\<video>: Definiert ein Video-Object
+
+\<source>: Definiert eine Videoquelle
+
 src: URL zur Videodatei
+
 type: Typ der Datei
 
 ```html
