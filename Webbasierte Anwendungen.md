@@ -353,8 +353,8 @@ Doctype:  Der HTML Doctype gibt den Dokumententyp eines HTML Dokuments an
 
 ##### Seitenaufbau
 
-  \<html> Root-Tag – Umfasst den gesamten Dokumenteninhalt
-  \<head> Dokumenten-Kopf – Titel, Metadaten, Includes,..
+  \<html> Root-Tag – Umfasst den gesamten Dokumenteninhalt<br>
+  \<head> Dokumenten-Kopf – Titel, Metadaten, Includes,..<br>
   \<body> Dokumenten-Körper – Enthält die eigentlichen Inhalte
 
   ```html
@@ -370,17 +370,7 @@ Doctype:  Der HTML Doctype gibt den Dokumententyp eines HTML Dokuments an
 
 ###### Head
 
-\<meta>: Gibt Meta-Informationen an
-
-charset: Verwendete Zeichenkodierung auf der Seite
-
-viewport: Zu verwendende Breite und Standard-Zoom (Multi-Devices)
-
-Allgemein: Meta-Informationen zum Inhalt (Keywords, Beschreibung,…)
-
-\<link>: Angabe wichtiger externen Ressourcen
-
-\<script>: Einbettung oder Einbindung von Skripten 
+\<meta>: Gibt Meta-Informationen an<br>charset: Verwendete Zeichenkodierung auf der Seite<br>viewport: Zu verwendende Breite und Standard-Zoom (Multi-Devices)<br>Allgemein: Meta-Informationen zum Inhalt (Keywords, Beschreibung,…)<br>\<link>: Angabe wichtiger externen Ressourcen<br>\<script>: Einbettung oder Einbindung von Skripten 
 
 ```html
 <head>
@@ -427,13 +417,7 @@ Externe Links
 
 ##### Tabellen
 
-\<table>: Die enthaltenen Elemente stellen eine gemeinsame Tabelle dar
-
-\<tr>: Umfasst alle Elemente einer Tabellen-Zeile
-
-\<th>: Eine Zelle einer Kopfzeile
-
-\<td>: Eine Zelle einer Tabellen-Spalte
+\<table>: Die enthaltenen Elemente stellen eine gemeinsame Tabelle dar<br>\<tr>: Umfasst alle Elemente einer Tabellen-Zeile<br>\<th>: Eine Zelle einer Kopfzeile<br>\<td>: Eine Zelle einer Tabellen-Spalte
 
 ```html
 <table>
@@ -448,17 +432,7 @@ Externe Links
 
 ##### Listen
 
-\<ul>: Eine Liste ungeordneter Elemente
-
-\<ol>: Eine Liste geordneter (nummerierter) Elemente
-
-\<li>: Ein Listeneintrag für un-, geordnete Listen
-
-\<dl>: Eine Liste für Definitionen 
-
-\<dt>: Term-Eintrag in einer Definitionsliste
-
-\<dd>: Erläuterungs-Eintrag in einer Definitionsliste
+\<ul>: Eine Liste ungeordneter Elemente<br>\<ol>: Eine Liste geordneter (nummerierter) Elemente<br>\<li>: Ein Listeneintrag für un-, geordnete Listen<br>\<dl>: Eine Liste für Definitionen <br>\<dt>: Term-Eintrag in einer Definitionsliste<br>\<dd>: Erläuterungs-Eintrag in einer Definitionsliste
 
 
 ```html
@@ -478,11 +452,7 @@ Externe Links
 
 **Attribute:**
 
-action: URL an welche die Daten aus dem Formular gesendet werden
-
-method: bestimmt die HTTP-Methode die zum Versand genutzt wird
-
-enctype: bestimmt den Mime-Type in dem Versendet wird
+action: URL an welche die Daten aus dem Formular gesendet werden<br>method: bestimmt die HTTP-Methode die zum Versand genutzt wird<br>enctype: bestimmt den Mime-Type in dem Versendet wird
 
 ```html
 <form action=“URL“ method=“POST|GET“ enctype=“TRANSFERFORMAT“>
@@ -533,11 +503,7 @@ enctype: bestimmt den Mime-Type in dem Versendet wird
 
 ###### Formular Buttons
 
-\<input>: Buttons in Formularen ins Eingabeelemente mit Typ:
-
-submit: Absenden des Formulars
-
-reset: Zurücksetzen aller Inhalte auf den Ladezustand
+\<input>: Buttons in Formularen ins Eingabeelemente mit Typ:<br>submit: Absenden des Formulars<br>reset: Zurücksetzen aller Inhalte auf den Ladezustand
 
 ```html
 <form action="/action_page.php">
@@ -561,11 +527,7 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 
 ##### Gestaltung
 
-\<label>: Beschriftung für ein Eingabeelement
-
-\<fieldset>: Eingabeelemente gruppieren
-
-\<legend>: Beschriftung für eine Gruppierung
+\<label>: Beschriftung für ein Eingabeelement<br>\<fieldset>: Eingabeelemente gruppieren<br>\<legend>: Beschriftung für eine Gruppierung
 
 ```html
 <fieldset>
@@ -585,17 +547,7 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 
 ##### Bilder
 
-\<picture>: Definiert ein Bild Objekt
-
-\<source>: Definiert eine Bildquelle
-
-media: Gibt an, wann die Bildquelle verwendet werden soll
-
-srcset: URL zum Bild
-
-\<img>: Fallback-Tag für alte Browser
-
-alt: Alternativtext; angezeigt, wenn das Bild nicht verfügbar ist
+\<picture>: Definiert ein Bild Objekt <br>\<source>: Definiert eine Bildquelle<br>media: Gibt an, wann die Bildquelle verwendet werden soll<br>srcset: URL zum Bild<br>\<img>: Fallback-Tag für alte Browser<br>alt: Alternativtext; angezeigt, wenn das Bild nicht verfügbar ist
 
 ````html
 <picture>
@@ -608,12 +560,8 @@ alt: Alternativtext; angezeigt, wenn das Bild nicht verfügbar ist
 ##### Audio
 
 
-\<audio>: Definiert ein Audio-Objekt
+\<audio>: Definiert ein Audio-Objekt <br>\<source>: Definiert eine Audioquelle <br>src: URL zur Audiodatei <br>type: Typ der Audiodatei
 
-\<source>: Definiert eine Audioquelle
-
-src: URL zur Audiodatei
-type: Typ der Audiodatei
 ```html
 <audio controls>
 	<source src=„sound.ogg" type="audio/ogg">
@@ -628,13 +576,7 @@ type: Typ der Audiodatei
 
 ##### Video
 
-\<video>: Definiert ein Video-Object
-
-\<source>: Definiert eine Videoquelle
-
-src: URL zur Videodatei
-
-type: Typ der Datei
+\<video>: Definiert ein Video-Object<br>\<source>: Definiert eine Videoquelle<br>src: URL zur Videodatei<br>type: Typ der Datei
 
 ```html
 <video width="320" height="240" controls>
@@ -647,4 +589,318 @@ type: Typ der Datei
 - Der Browser verwendet die erste Quelle aus der Liste, die er versteht
 - Kontrollelemente und Autostart können definiert werden
 - Kein Plugin notwendig
+
+
+## CSS (Vorlesung 4)
+
+**Definition: CSS (Cascading Style Sheets) ist die Standard Stylesheetsprache für Webseiten. CSS formatieren und positionieren HTML-Elemente**
+
+**Stylesheetsorache:**
+
+- Beschreibt das Aussehen eines Dokumentes
+  - Kann dynamisch geändert werden
+- Dient nicht der Implementierung von Algorithmen
+
+**CSS:**
+
+- Definiert Selektoren mit denen HTML-Elemente erfasst werden können
+- Legt mögliche Style-Attribute fest
+- Legt die möglichen Werte für Style-Attrubute fest
+- Legt die Interpretation von Positionierungsangaben fest
+- Beschriebt wie die Style-Angaben vom Browser zu interpretieren sind
+
+**Browser:**
+
+1. Interpretieren Style-Anweisungen
+2. Suchen die zu stylenden Elemente über Selektoren
+3. Wenden die Style-Anweisungen an
+
+### Rule-Set
+
+**Definition: Ein CSS Rule-Set ist ein formeller Regelsatz, der das Aussehen unter festgelegten Bedingungen eines bestimmten HTML Elements festlegt.**
+
+Selector: Wählt die Elemente aus, deren Eigenschaften gesetzt werden sollen <br>Property: Ist eine stylebare Eigenschaft eines Elements (hängt vom Element ab) <br>Value: Ist ein Wert, den die Eigenschaft annehmen kann
+
+```css
+Selector { Property: Value; Property: Value}
+```
+
+### Einbinden
+
+**External:** Aus einer anderen Datei, link im Header
+
+```html
+<link rel=“stylesheet“ type=“text/css“ href=“datei.css“>
+```
+
+**Internal:** In einen style-Tag im Header
+
+```html
+<style>…</style>
+```
+
+**Inline:** In einen style-Attrbut bei einem Element
+
+```html
+<p style=“…“>…</p>
+```
+
+### Kaskadierung
+
+**Definition: Kaskadierung (Cascading) bezeichnet die Eigenschaft von CSS, dass mehrere Stylesheets zu einem gemeinsamen Stylesheet zusammengefasst werden**
+
+**Kaskadierungs-Reihenfolge:**
+
+1. Browser
+2. Extern und Intern (in Deklarations Reihenfolge)
+3. Inline
+
+### Style Stack
+
+**Die Festlegung eines Style-Stack legt den Aufbau und die Verteilung der Style-Anweisungen fest und sollte in der Planungs-Phase einer Webanwendung erfolgen.**
+
+**Beispiel Style-Stack**
+
+1. Extern (global): Für die gesamte Anwendung
+2. Extern (area): Für Elemente die nicht überall, aber auf mehreren Seiten zu finden sind
+3. Intern: Für Elemente die nur auf einer Seite vorkommen
+4. Inline: Falls ein Element ein spezielles Aussehen benötigt
+
+*Allgemeine Regel: Je tiefer im Stack, desto weniger soll dort geregelt sein*
+
+### Selektoren
+
+| Selektor | Beschreibung                             |
+| -------- | ---------------------------------------- |
+| .class   | Alle Elemente die diese Klasse haben (HTML Attribut class=" ") |
+| \#id     | Das Element mit der ID (HTML Attribut id=" ") |
+| *        | Alle Elemente                            |
+| element  | Das Element mit den angegebenen Namen (z.B h1) |
+
+| Attributs-Selektor | Beschreibung                             |
+| ------------------ | ---------------------------------------- |
+| [attribute]        | Alle Elemente die ein Attribut mit diesen Namen haben |
+| [attribute=wert]   | Alle Elemente die ein Attribut mit diesen Namen und Wert hat |
+
+#### Pseudo Klassen
+
+**Sind Klassen, die ein Element durch den Browser aufgrund seiner Position im Dokument, seines Verhältnisses zum Benutzer oder dergleichen hat.**
+
+| Pseudo Klasse | Beschreibung                             |
+| ------------- | ---------------------------------------- |
+| :hover        | Alle Elemente, über die der Benutzer gerade seine Maus hat |
+| :focus        | Wenn ein Eingabeelement den Fokus hat    |
+| :link         | Alle noch nicht besuchten Links          |
+| :first-child  | Das erste Kind-Element (eines davor angegebenen Elements) |
+
+#### Pseudo Elemente
+
+**Sind Elemente die implizit existieren**
+
+| Pseudo Element | Beschreibung                     |
+| -------------- | -------------------------------- |
+| ::first-line   | Die erste Zeile eines Textes     |
+| ::first-letter | Der erste Buchstabe eines Textes |
+| ::before       | Der Bereich vor einem Element    |
+
+#### Kombination
+
+Selektoren sind auch Kombinierbar*
+
+**Kommbinations Operatoren:** <br>Kommata: Wählt Selector 1 oder Selector 2 <br>Leerzeichen: Alle Elemente von selector 2 und selector 1
+
+Beispiel:
+```css
+section article {
+color: blue;
+}
+section, article {
+color: red;
+}
+```
+
+ACHTUNG! Speziellere Regeln haben immer Vorrang vor allgemeineren!
+
+### Eigenschaften
+
+| Eigenschaft         | Beschreibung                             |
+| ------------------- | ---------------------------------------- |
+| color               | Schriftfarbe                             |
+| background-color    | Hintergrundfarbe                         |
+| font                | Schriftart                               |
+| text-shadow         | Schattenwurf für Text                    |
+| text-overflow       | Verhalten bei überlangen Texten          |
+| list-style-type     | Typ des Zeichens in Listen               |
+| border-collapse     | Zusammenlegen der Ränder einer Tabellenspalte |
+| text-align          | Ausrichtung des Texts                    |
+| background-image    | Hintergrundbild                          |
+| background-repeat   | Wiederholung von Hintergrundbildern      |
+| background-position | Positionierung von Hintergründen         |
+| border-style        | Typ eines Rahmens (z.B. gepunktet, gestrichelt,…) |
+| border-color        | Farbe eines Rahmens                      |
+| border-radius       | Abrundung von Rahmen                     |
+| border              | Kombinierte Angaben zu Typ, Farbe, Dicke,… |
+
+### Layout
+
+#### Boxmodel
+
+**HTML-Auszeichnungen, die einen Block oder Absatz bilden werden in eine Box eingebettet. Die Box wird umgeben von einer Polsterung (padding), dem Rahmen (border) und dem Rand (margin). Die Gesamtausmaße der Box ergeben sich immer aus einer Addition dieser Größen.**
+
+![boxmodel](/Ressourcen/boxmodel.PNG)
+
+Beispiel:
+
+```css
+body {
+	border: 1px dotted;
+}
+section article {
+	height: 50px;
+	padding: 5px;
+	border: 1px solid red;
+	margin: 20px;
+}
+```
+
+#### Darstellung
+
+**Definition: Die Display-Eigenschaft stellt die Art der Darstellung ein.**
+
+| display    | Beschreibung                             |
+| ---------- | ---------------------------------------- |
+| none       | Das Element wird so dargestellt, als sei es nicht existent |
+| inline     | Kein Zeilenumbruch vor und hinter dem Element |
+| block      | Das Element wird wie ein Block-Element dargestellt |
+| table      | Zweidimensionale Tabellen-ähnliche Designs |
+| positioned | Fix positionierte Elemente               |
+| flex       | Flexible Positionierung, gleichmäßige Aufteilung, Stacking |
+
+| visibillity | Beschreibung                             |
+| ----------- | ---------------------------------------- |
+| hidden      | Das Element wird nicht dargestellt, aber der Platz bleibt reserviert |
+
+Beispiel: 
+
+```css
+article {
+	display: none;
+}
+section article {
+	display: inline;
+}
+section article p {
+	display: inline;
+}
+
+```
+
+
+| position     | Beschreibung                             |
+| ------------ | ---------------------------------------- |
+| static       | Normale Platzierung innerhalb des Seiteninhalts |
+| relative     | Positionsangaben gelten relativ zur normalen Platzierung |
+| absolute     | Positionierung absolut zum umgebenden Element |
+| fixed        | Absolut positioniert und bleibt beim Scrollen |
+| sticky       | Abhängig von scroll-Position. Bleibt sichtbar hängen |
+| top, bottom: | Abstand vom oberen oder unteren Rand     |
+| left, right: | Abstand vom linken oder rechten Rand     |
+
+Beispiel:
+
+```css
+#art1 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#art2 {
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+#art3 {		
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+```
+
+### Animation
+
+#### Transistions
+
+**CSS Transitions erlauben es Änderungen an CSS-Eigenschaften animiert auszuführen, indem die Werte schrittweise geändert werden.**
+
+*transition: \[eigenschaft]\[dauer]* <br>\[eigenschaft]: Name der Eigenschaft, die Übergeleitert werden soll <br>\[dauer]: Zeit in Sekunden, die den Effekt in Anspruch nehmen soll
+
+Beispiel: 
+
+```css
+a {
+	font-size: 12pt;
+	border-width: 1px;
+	color: black;
+}
+a:hover {
+	font-size: 30pt;
+	color: red;
+	transition: font-size 2s, color 5s;
+}
+```
+
+
+
+#### Transform
+
+**CSS Transform erlauben es Elemente in ihrer Ausrichtung zu transformieren. Es gibt 2D und 3D Transformationen**
+
+*transform: [transformfunction]* 
+
+| transformfunction | Beschreibung                             |
+| ----------------- | ---------------------------------------- |
+| translate()       | An der x und y Achse verschieben         |
+| scale()           | Skalierung des Elements                  |
+| rotate()          | Rotation                                 |
+| skew()            | Scherung                                 |
+| matrix()          | Freie Transformation anhand einer Matrix |
+
+Beispiel:
+
+```css
+div {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+}
+div:hover {
+	transform: rotate(20deg)
+}
+```
+
+#### Animations
+
+**CSS Animations erlauben das Definieren eines komplexeren Verlaufes von Werteänderungen zum Erzeugen einer Animation.**
+
+\@keyframes: Schlüsselbegriff zur Definition einer Animation <br> from: Startwerte der Eigenschaft(en) <br>to: Endwerte der Eigenschaft(en) <br>animation-name: Name der Animation, wie bei @keyframes angegeben <br>animation-duration: Dauer der Animation<br>x%: Eingeschaften zum Zeitpunkt x% der Animation
+
+Beispiel: 
+
+```css
+div {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	background-color: red;
+	animation-name: example;
+	animation-duration: 4s;
+}
+@keyframes example {
+	0% {background-color:red; left:0px; top:0px;}
+	25% {background-color:yellow; left:200px; top:0px;}
+	50% {background-color:blue; left:200px; top:200px;}
+	75% {background-color:green; left:0px; top:200px;}
+	100% {background-color:red; left:0px; top:0px;}
+}
+```
 
