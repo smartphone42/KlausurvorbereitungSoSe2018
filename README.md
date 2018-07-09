@@ -3,6 +3,7 @@
 - Ergänzungen/Anmerkungen bitte per Telegram/WhatsApp
 
 **Klausurtermine**
+
 | Klausur | Termin 1 | Termin 2 |
 | ------- | -------- | -------- |
 | BS      | 16.07    | 24.09    |
