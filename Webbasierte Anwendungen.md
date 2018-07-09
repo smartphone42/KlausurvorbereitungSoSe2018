@@ -4,7 +4,7 @@
 
 ### Problemfelder - Übersicht
 
-![Problemfelder](C:\Users\Andre\Desktop\WBA-Vorlesung\Problemfelder.PNG)
+![Problemfelder](Ressourcen\Problemfelder.PNG)
 
 ### Standardisierung 
 
