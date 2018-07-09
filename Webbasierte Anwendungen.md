@@ -1,6 +1,6 @@
 # Webbasierte Anwendungen
 
-##Grundlagen (Vorlesung 1)
+## Grundlagen (Vorlesung 1)
 
 ### Problemfelder - Übersicht
 
@@ -42,7 +42,7 @@
 *Haupttyp/Untertyp*
 
 - text/plain
-- texxt/html
+- text/html
 - image/jpeg
 - application/pdf
 - etc.
