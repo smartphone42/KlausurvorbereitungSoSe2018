@@ -474,7 +474,7 @@ Externe Links
 
 **Definition: HTML Formulare dienen der Eingabe von Daten durch Benutzer. Sie Werden durch den Browser an eine angegebene Adresse versendet und müssen vom Empfänger verarbeitet werden.**
 
-<form>: Umschließt alle Elemente eines Formulars und legt Attribute fest
+\<form>: Umschließt alle Elemente eines Formulars und legt Attribute fest
 
 **Attribute:**
 
@@ -508,19 +508,19 @@ enctype: bestimmt den Mime-Type in dem Versendet wird
  \<input> Eingabeelement mit unterschiedlicher Darstellung nach Typ:
 
 
-| Type       | Beschreibung                             | Beispiel                                 |
-| ---------- | ---------------------------------------- | ---------------------------------------- |
-| text       | einzeiliges Eingabefeld                  | \<input type="text" name=s>               |
-| password   | einzeiliges Eingabefeld mit nicht sichtbaren Zeichen | \<input type="password" name=s>           |
-| number     | ein Zahlenwert                           | \<input type="number" name=s>             |
-| range      | ein Zahlenwert aus einem bereich         | \<input type="range" name=s min="0" max="10"> |
-| color      | Farbangaben                              | \<input type="color" name=s>              |
-| email      | Eine E-Mail Adresse                      | \<input type="email" name=s>              |
-| file       | Eine Datei                               | \<input type="color" name=s>              |
-| tel        | Eine Telefonnummer                       | \<input type="file" name=s>               |
-| url        | Eine URL                                 | \<input type="url" name=s>                |
-| checkbox   | es können beliebig viele Optionen aktiviert werden | \<input type="checkbox" name="s" value="A"> <br> \<input type="checkbox" name="s" value="B"> |
-| radio      | es kann nur eine einzige Option aktiviert werden | \<input type="radio" name="s" value="male"> <br> \<input type="radio" name="s" value="female"> |
+| Type        | Beschreibung                             | Beispiel                                 |
+| ----------- | ---------------------------------------- | ---------------------------------------- |
+| text        | einzeiliges Eingabefeld                  | \<input type="text" name=s>              |
+| password    | einzeiliges Eingabefeld mit nicht sichtbaren Zeichen | \<input type="password" name=s>          |
+| number      | ein Zahlenwert                           | \<input type="number" name=s>            |
+| range       | ein Zahlenwert aus einem bereich         | \<input type="range" name=s min="0" max="10"> |
+| color       | Farbangaben                              | \<input type="color" name=s>             |
+| email       | Eine E-Mail Adresse                      | \<input type="email" name=s>             |
+| file        | Eine Datei                               | \<input type="color" name=s>             |
+| tel         | Eine Telefonnummer                       | \<input type="file" name=s>              |
+| url         | Eine URL                                 | \<input type="url" name=s>               |
+| checkbox    | es können beliebig viele Optionen aktiviert werden | \<input type="checkbox" name="s" value="A"> <br> \<input type="checkbox" name="s" value="B"> |
+| radio       | es kann nur eine einzige Option aktiviert werden | \<input type="radio" name="s" value="male"> <br> \<input type="radio" name="s" value="female"> |
 | \<select>   | Drop-Down-Liste mit <option> Elementen   | \<select> \<option value="A"> A \</option> \</select> |
 | \<textarea> | Ein mehrzeiliges Texteingabefeld         | \<textarea rows="4" cols="50"> ...\</textarea> |
 
@@ -549,7 +549,7 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 </form> 
 ```
 
-​	![formularButton](.\Ressourcen\formularButton.PNG)
+​	![formularButton](.\Ressourcen\formularButton.PNG?raw=true)
 
 ###### Script Button
 
