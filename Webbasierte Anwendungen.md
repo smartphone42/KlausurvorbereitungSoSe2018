@@ -1,10 +1,10 @@
 # Webbasierte Anwendungen
 
-## Grundlagen (Vorlesung 1)
+##Grundlagen (Vorlesung 1)
 
 ### Problemfelder - Übersicht
 
-![Problemfelder](Ressourcen\Problemfelder.PNG)
+![Problemfelder](C:\Users\Andre\Desktop\WBA-Vorlesung\Problemfelder.PNG)
 
 ### Standardisierung 
 
@@ -42,7 +42,7 @@
 *Haupttyp/Untertyp*
 
 - text/plain
-- text/html
+- texxt/html
 - image/jpeg
 - application/pdf
 - etc.
@@ -71,7 +71,7 @@
 
 
 
-**HTTP legt folgendes fest: **
+**HTTP legt folgendes fest:**
 
 - Ablauf des Dokumentenabrufs
 - Mögliche Arten einer Anfrage
@@ -79,7 +79,7 @@
 - Mögliche Arten einer Antwort
 - Inhalt einer Antwort
 
-**HTTPS fügt folgendes hinzu: **
+**HTTPS fügt folgendes hinzu:**
 
 - Verschlüsselungsebene zwischen HTTP und TCP
 - Verschlüsselung mit Zertifikaten (SSL/TLS)
