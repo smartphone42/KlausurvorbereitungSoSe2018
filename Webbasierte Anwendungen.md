@@ -1,6 +1,6 @@
 # Webbasierte Anwendungen
 
-## Grundlagen (Vorlesung 1)
+## Grundlagen (Vorlesung 1
 
 ### Problemfelder - Übersicht
 
@@ -162,4 +162,168 @@ Date: Mo, 18 Oct 2017 23:20:55 GMT
 Content-Type: text/html
 <html> … </html>
 ```
+
+## Webapplikationen (Vorlesung 2)
+
+**Definition: Eine Web-Applikation ist ein Softwaresystem, das auf Spezifikationen des World Wide Web Consortium (W3C) beruht und Webspezifische Ressourcen wie Inhalte und Dienste bereitstellt, die über eine Benutzerschnittstelle, den Web-Browser, verwendet werden**
+
+Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen:
+
+- Anwederbezug
+- Nutzung
+- Inhalt
+- Verlunkung
+- Dastellung
+- Software Struktur
+
+### Charakteristika 
+
+1. Anwederbezug
+2. Nutzung
+3. Inhalt
+4. Verlinkung
+5. Darstellung
+6. Software Struktur
+7. Hardware Nutzung
+8. Maschinenlesbarkeit
+
+#### Charakteristika 1 - Anwenderbezug
+
+**Definition: Eine Web-Applikation wird von verschiedensten Anwendern mit verschiedensten Kontexten, Fähigkeiten und Vorwissen genutzt**
+
+- Mehrbenutzer
+
+  - Gleichzeitige Nutzung durch mehrere Benutzer
+  - Nutzung durch unterschiedliche Geräte
+  - Nutzung durch unterschiedliche Software
+
+- Sozialer Kontext
+
+  - Kaum Loyalität der Nutzer
+  - Nutzungszahlen sschwer vorhersagbar
+
+- Technische Fähigkeiten
+
+  - Unterschiedliche Vertrautheit mit den Bendienkonzept
+
+- Physische Fähigkeiten
+
+  - Unterschiedliche phyische Fähigkeiten
+
+- Vorwissen
+
+  - Unterschieldiche Vertrautheit mit den Inhalten der Seite
+
+- Präferenzen
+
+  - Unterschiedliche Wünsche an Aussehen und Inhalt
+
+#### Charakteristika 2 - Nutzung
+
+**Definition: Web-Applikationen werden unter verschiedensten Gegebenheiten genutzt**
+
+- Zeitlicher Kontext
+  - Nutzbarkeit 24/7
+  - Inhalt abhängig vom Zugriffszeitpunkt
+- Örtlicher Kontext
+  - Anpassung der Sprache
+  - Internationalisierung der Inhalte
+  - Inhalte abhängig vom Standort des Zugreifenden
+- Interaktivität
+  - Seitenintegrierte Suchfunktionen
+  - Einstellungen auf der Seite vornehmen
+  - Benutzerabhängige Inhalte
+- Benutzerinteraktion
+  - Verschiedene zeitgleiche Anwender können interagieren
+- Personalisierte Dienste
+  - Auf den Anweder zugeschnittene Inhalte
+
+
+#### Charakteristika 3 - Inhalt
+
+**Definition: Die Inhalte (Content) einer Web-Applikation sind die Basis für ihre Nutzung und kritischer Faktor für die Akzeptanz** 
+
+- Multimedialer Charakter
+  - Text, Grafiken, Animationen, Audio, Video
+- Inhaltliche Genauigkeit 
+  - Hohe Anforderungen an Konsistenz, Verlässlichkeit und Umfang
+  - Aktualität
+    - Inhalt muss aktuell und passend sein
+
+#### Charakteristika 4 - Verlinkung
+
+**Definition: Web-Applikationen haben Verbindungen zu anderen WebApplikationen.(Hypertext) **
+
+- Hyptertext-Struktur
+
+  - Aufbau einer Web-Applikation im Kontext anderer Web-Applikationen
+
+- Nicht-lineare Nutzung
+
+  - Stöbern, Suchen, geführtes Navigieren
+
+- Desorientierung
+
+  - Verlieren des Orts- und Richtungssinns und kognitive Belastung 
+
+
+####Charakteristika 5 - Darstellung 
+
+**Definition: Die Darstellung (Presentation) einer Web-Applikation ist mit ein wichtiger Faktor bei der Benutzerakzeptanz**
+
+- Ästhetik
+  - Die Webanwendung soll ansprechend gestaltet sein
+- Usabillity
+  - Prinzipien der Usabillity beachten
+- Aktualität
+  - Die Dastellung unterliegt Modetrends
+
+#### Charakteristika 6 - Software Struktur
+
+**Definition: Eine Web-Applikation ist eine jederzeit verfügbare, verteilte Anwendung**
+
+- Jederzeit Verfügbar
+  - Ausfallsicherheit der Hardware und Software 
+- Verteilt
+  - Server und Client
+- Dienstgüte
+  - Übertragungseigenschaften des Web (Bandbreite, Verbidnungsabbrüche etc)
+
+#### Charakteristika 7 - Hardware Nutzung
+
+**Definition: Eine Web-Applikation hat einen beschränkten Zugriff auf die Hardware des Anzeigegerätes**
+
+- Keine Hardwareverwendung
+- Browser Implementiert:
+  - Hardwerbeschleuniger wenn möglich
+- User-Can-Allow-Policy
+  - Verwendung von Hardware MUSS vom User expliziet erlaubt werden (z.B Kameras)
+
+#### Charakteristika 8 - Maschinenlesbarkeit
+
+**Definition: Web-Applikationen sind zunächst einmal für die Verwendung durch Menschen konzipiert, können aber auch Konzepte zur Verwendung durch Algorithmen implementieren**
+
+- Strukturelle Auszeichnungen
+  - Kenntlichmachung von Seiten-Bereichen
+- Trennung von Inhalt und Design
+  - Inhalt und Design werden getrennt voneinander implementiert
+- Semantische Auszeichnung
+  - Auszeichnung von Inhalten, damit ihre Bedeutung emittelt werden kann
+
+### Kategorien
+
+| Kategorie                         | Definition                               | Beispiel                                 |
+| --------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Dokumentenzentrierte Web-Seiten   | Eine dokumentenzentrierte Web-Seite besteht aus statischen HTML-Seiten |                                          |
+| Interaktive Web-Anwendung         | Eine interaktive Web-Anwendung bietet die Möglichkeit einfache Interaktionen über Eingabebereiche auszuführen | News-Seiten, Fahrplanauskünfte           |
+| Transaktionale Web-Anwendungen    | Eine transaktionale Web-Anwendung bietet die Möglichkeit schreibende Interaktionen auszuführen | OnlineBanking, E-Shopping, Reservierungssysteme |
+| Workflowbasierte Web-Anwendungen  | Bei Workflowbasierte Web-Anwendungen steht die Abwicklung von Geschäftsprozessen (Workflow) im Vordergrund | Business-to-Business lösungen            |
+| Kollaborative Web-Anwendungen     | Kollaborative Web-Anwendungen rücken die Teilnahme der Anwender in den Mittelpunkt. | Gruppenterminplanung, Social Media       |
+| Portalorientierte Web-Anwendungen | Portalorientierte Web-Anwendungen verstehen sich als Zugriffspunkt auf verteilte, potentiell heterogene Informationsquellen und Dienste im Sinne eines Single Point of Acces | Allgemeine Portale: zentrale Anlaufseiten als Einstiegshilfe ins Netz(z.B. Microsoft, Yahoo);            spezialisierte Portale: Unternehmensportale, Marktplatzportale,Community-Portale |
+| Ubiquitäre Web-Anwendungen        | Ubiquitäre Web-Anwendungen bieten uneingeschränkte Verfügbarkeit und personalisierte Dienste. | Mobile Anwendungen                       |
+| Semantische Web-Anwendungen       | Semantische Web-Anwendungen bereiten ihre Inhalte so auf, dass sie auch durch Algorithmen in ihrer Bedeutung ausgewertet werden können. | globale Datenanlayse für Unwetterwarnung, Grippewellen |
+| Progressive Web-Anwendungen       | Progressive Web-Anwendungen erfüllen Charakteristika, von Web-Anwendungen und nutzen Charakteristika von nativen Anwendungen. | Als Apps erscheinende Web-Anwendungen    |
+
+
+
 
