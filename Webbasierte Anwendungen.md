@@ -252,7 +252,7 @@ Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen
 
 #### Charakteristika 4 - Verlinkung
 
-**Definition: Web-Applikationen haben Verbindungen zu anderen WebApplikationen.(Hypertext) **
+**Definition: Web-Applikationen haben Verbindungen zu anderen WebApplikationen.(Hypertext)**
 
 - Hyptertext-Struktur
 
@@ -267,7 +267,7 @@ Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen
   - Verlieren des Orts- und Richtungssinns und kognitive Belastung 
 
 
-####Charakteristika 5 - Darstellung 
+#### Charakteristika 5 - Darstellung 
 
 **Definition: Die Darstellung (Presentation) einer Web-Applikation ist mit ein wichtiger Faktor bei der Benutzerakzeptanz**
 
