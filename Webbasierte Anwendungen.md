@@ -252,7 +252,7 @@ Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen
 
 #### Charakteristika 4 - Verlinkung
 
-**Definition: Web-Applikationen haben Verbindungen zu anderen WebApplikationen.(Hypertext) **
+**Definition: Web-Applikationen haben Verbindungen zu anderen WebApplikationen.(Hypertext)**
 
 - Hyptertext-Struktur
 
@@ -267,7 +267,7 @@ Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen
   - Verlieren des Orts- und Richtungssinns und kognitive Belastung 
 
 
-####Charakteristika 5 - Darstellung 
+#### Charakteristika 5 - Darstellung 
 
 **Definition: Die Darstellung (Presentation) einer Web-Applikation ist mit ein wichtiger Faktor bei der Benutzerakzeptanz**
 
@@ -324,7 +324,7 @@ Webanwendungen stellen anderen Anforderungen als klassische Destkopapplikationen
 | Semantische Web-Anwendungen       | Semantische Web-Anwendungen bereiten ihre Inhalte so auf, dass sie auch durch Algorithmen in ihrer Bedeutung ausgewertet werden können. | globale Datenanlayse für Unwetterwarnung, Grippewellen |
 | Progressive Web-Anwendungen       | Progressive Web-Anwendungen erfüllen Charakteristika, von Web-Anwendungen und nutzen Charakteristika von nativen Anwendungen. | Als Apps erscheinende Web-Anwendungen    |
 
-###app-manifest
+### app-manifest
 
 **Definition: Das app-manifest ist eine Konfigurationsdatei, welche geeigneten Geräten zeigt, dass es sich bei der Webanwendung um eine Webanwendung handelt, die als App genutzt werden kann.**
 
@@ -353,9 +353,9 @@ Doctype:  Der HTML Doctype gibt den Dokumententyp eines HTML Dokuments an
 
 ##### Seitenaufbau
 
-  <html> Root-Tag – Umfasst den gesamten Dokumenteninhalt
-  <head> Dokumenten-Kopf – Titel, Metadaten, Includes,..
-  <body> Dokumenten-Körper – Enthält die eigentlichen Inhalte
+  \<html> Root-Tag – Umfasst den gesamten Dokumenteninhalt
+  \<head> Dokumenten-Kopf – Titel, Metadaten, Includes,..
+  \<body> Dokumenten-Körper – Enthält die eigentlichen Inhalte
 
   ```html
   <html>
@@ -370,12 +370,12 @@ Doctype:  Der HTML Doctype gibt den Dokumententyp eines HTML Dokuments an
 
 ###### Head
 
-<meta>: Gibt Meta-Informationen an
+\<meta>: Gibt Meta-Informationen an
 charset: Verwendete Zeichenkodierung auf der Seite
 viewport: Zu verwendende Breite und Standard-Zoom (Multi-Devices)
 Allgemein: Meta-Informationen zum Inhalt (Keywords, Beschreibung,…)
-<link>: Angabe wichtiger externen Ressourcen
-<script>: Einbettung oder Einbindung von Skripten 
+\<link>: Angabe wichtiger externen Ressourcen
+\<script>: Einbettung oder Einbindung von Skripten 
 
 ```html
 <head>
@@ -390,16 +390,16 @@ Allgemein: Meta-Informationen zum Inhalt (Keywords, Beschreibung,…)
 
 ##### Strukturelle Tags
 
-| Tag       | Beschreibung                             |
-| --------- | ---------------------------------------- |
-| <header>  | definiert den Kopfbereich einer Seite oder eines Abschnitts |
-| <footer>  | definiert die Fußzeile einer Seite oder eines Abschnitts |
-| <nav>     | definiert einen Navigationsbereich einer Seite oder eines Abschnitts |
-| <section> | definiert einen logischen Abschnitt einer Seite oder einer Gruppe von Inhalten |
-| <article> | definiert einen Artikel oder ein in sich abgeschlossenes Inhaltselement |
-| <aside>   | definiert sekundäre oder ähnliche Inhalte |
-| <p>       | definiert einen Absatz (zusammengehörigen Text) |
-| <br>      | erzeugt einen Zeilenumbruch              |
+| Tag        | Beschreibung                             |
+| ---------- | ---------------------------------------- |
+| \<header>  | definiert den Kopfbereich einer Seite oder eines Abschnitts |
+| \<footer>  | definiert die Fußzeile einer Seite oder eines Abschnitts |
+| \<nav>     | definiert einen Navigationsbereich einer Seite oder eines Abschnitts |
+| \<section> | definiert einen logischen Abschnitt einer Seite oder einer Gruppe von Inhalten |
+| \<article> | definiert einen Artikel oder ein in sich abgeschlossenes Inhaltselement |
+| \<aside>   | definiert sekundäre oder ähnliche Inhalte |
+| \<p>       | definiert einen Absatz (zusammengehörigen Text) |
+| \<br>      | erzeugt einen Zeilenumbruch              |
 
 ![Strukturelle Tags](Ressourcen\Strukturelle Tags.PNG)
 
@@ -422,10 +422,10 @@ Externe Links
 
 ##### Tabellen
 
-<table>: Die enthaltenen Elemente stellen eine gemeinsame Tabelle dar
-<tr>: Umfasst alle Elemente einer Tabellen-Zeile
-<th>: Eine Zelle einer Kopfzeile
-<td>: Eine Zelle einer Tabellen-Spalte
+\<table>: Die enthaltenen Elemente stellen eine gemeinsame Tabelle dar
+\<tr>: Umfasst alle Elemente einer Tabellen-Zeile
+\<th>: Eine Zelle einer Kopfzeile
+\<td>: Eine Zelle einer Tabellen-Spalte
 
 ```html
 <table>
@@ -440,12 +440,12 @@ Externe Links
 
 ##### Listen
 
-<ul>: Eine Liste ungeordneter Elemente
-<ol>: Eine Liste geordneter (nummerierter) Elemente
-<li>: Ein Listeneintrag für un-, geordnete Listen
-<dl>: Eine Liste für Definitionen 
-<dt>: Term-Eintrag in einer Definitionsliste
-<dd>: Erläuterungs-Eintrag in einer Definitionsliste
+\<ul>: Eine Liste ungeordneter Elemente
+\<ol>: Eine Liste geordneter (nummerierter) Elemente
+\<li>: Ein Listeneintrag für un-, geordnete Listen
+\<dl>: Eine Liste für Definitionen 
+\<dt>: Term-Eintrag in einer Definitionsliste
+\<dd>: Erläuterungs-Eintrag in einer Definitionsliste
 
 ```html
 <ul><li>Ein ungeordneter Eintrag</li></ul>
