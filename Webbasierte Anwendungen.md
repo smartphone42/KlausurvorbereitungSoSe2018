@@ -4,7 +4,7 @@ Webbasierte Anwendungen
 
 ### Problemfelder - Übersicht
 
-![Problemfelder](Ressourcen\Problemfelder.PNG)
+![Problemfelder](/Ressourcen/Problemfelder.PNG)
 
 ### Standardisierung 
 
@@ -406,7 +406,7 @@ Allgemein: Meta-Informationen zum Inhalt (Keywords, Beschreibung,…)
 | \<p>       | definiert einen Absatz (zusammengehörigen Text) |
 | \<br>      | erzeugt einen Zeilenumbruch              |
 
-![Strukturelle Tags](Ressourcen\Strukturelle Tags.PNG)
+![Strukturelle Tags](/Ressourcen/Strukturelle Tags.PNG)
 
 
 
@@ -444,7 +444,7 @@ Externe Links
 </table>
 ```
 
-![TabelleExample](C:\Users\Andre\Desktop\WBA-Vorlesung\Zusammenfassung\Ressourcen\TabelleExample.PNG)
+![TabelleExample](/Ressourcen/TabelleExample.PNG)
 
 ##### Listen
 
@@ -549,7 +549,7 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 </form> 
 ```
 
-![formularButton](/Ressourcen/formularButton.PNG?raw=true "formularButton")
+![formularButton](/Ressourcen/formularButton.PNG)
 
 ###### Script Button
 
@@ -579,7 +579,7 @@ reset: Zurücksetzen aller Inhalte auf den Ladezustand
 </fieldset>
 ```
 
-![gestaltungLabel](.\Ressourcen\gestaltungLabel.PNG)
+![gestaltungLabel](/Ressourcen/gestaltungLabel.PNG)
 
 #### Mediadatein
 
