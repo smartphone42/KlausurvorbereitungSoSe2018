@@ -963,7 +963,7 @@ div {
 <a href=“#“ onclick=“alert(‘Ausgabe‘)“>Link</a>
 ```
 
-###Ausführungsreihenfolge
+### Ausführungsreihenfolge
 
 **Definition: JavaScripte werden ausgeführt, sobald der Browser sie vollständig geladen hat.**
 
@@ -1182,7 +1182,7 @@ console.log(meineVar.a1); // Ausgabe: 20
 console.log(meineVar.attribut2); // Ausgabe: 10
 ```
 
-#####Vererbung
+##### Vererbung
 
 **Eigenschaften:**
 
@@ -1527,7 +1527,7 @@ Basieren auf zwei Datein.
    });
    ```
 
-   Und einer fetch Methode. die Angeforderte Elemente zurückliefert: 
+   Und einer fetch Methode. die angeforderte Elemente zurückliefert: 
 
    ```javascript
    // Wird aufgerufen wenn Dateien angefragt werden
