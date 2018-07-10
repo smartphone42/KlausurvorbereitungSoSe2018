@@ -904,3 +904,651 @@ div {
 }
 ```
 
+## Javascript (Vorlesung 5)
+
+**Definition: JavaScript ist eine höhere, dynamisch-typisierte, und prototypbasierte Skriptsprache. Sie unterstützt multi-paradigmen- und modulare Implementierung.**
+
+**Skriptsprache:**
+
+- Automatische Speicherverwaltung
+- Mächtige Datenstrukturen
+
+**Höhere Sprache:**
+
+- Spracheelemente höherer Ebene wie Schleifen
+- Umfangreiche integrierte Bibliotheken
+
+**Dynamisch-Typisiert:**
+
+- Variablen haben keinen festgelegten Datentyp, können zur Laufzeit unterschiedliche Inhalte annehmen
+
+**Prototyp-basiert:**
+
+- Zur Laufzeit erstellte Objekte können als Schablone für neue Objekte dienen
+
+**Multi-Paradigmen:**
+
+- javaScripte können prozedural, funktional oder objektorientiert sein
+
+**Modulare Implementierung:**
+
+- Skripte können in andere Skripte eingebunden werden
+
+**Anwendungsgebiete:**
+
+- Client-seitige Anwendungen: hauptsächlich im Webumfeld
+- Server-seitige Anwendungen: node.js
+
+### ECMAScript
+
+**Definition: ECMAScript ist der W3C standardisierte Kern von JavaScript. Er definiert die Sprachelemente.**![ECMA](/Ressourcen/ECMA.PNG)
+
+### Einbinden
+
+**External:** Aus einer anderen Datei, im Header oder Body
+
+```html
+<script src=“datei.js“></script>
+```
+
+**Internal:** Im Script-Tag innerhalb Header oder Body
+
+```html
+<script>…</script>
+```
+
+**InAttribute** In einem onclick Attribut (veraltet!)
+
+```html
+<a href=“#“ onclick=“alert(‘Ausgabe‘)“>Link</a>
+```
+
+###Ausführungsreihenfolge
+
+**Definition: JavaScripte werden ausgeführt, sobald der Browser sie vollständig geladen hat.**
+
+**Auswirkungen:**
+
+- Skripte können ausgeführt werden, bevor das Dokument vollständig geladen ist
+- Funktionen können zu früh ausgeführt werden
+- Eventuell sind bei Skriptstart nicht alle Abhängigkeiten geladen
+
+
+
+### Prozedurale Elemente
+
+#### Variablen
+
+*var*: globale Variable <br>*let*: Lokale Variable <br>*const*: Konstante lokale Variable
+
+**Eine Variable hat den Datentyp des Wertes, der ihr zugewiesen wurde. Der Datentyp kann sich zur Laufzeit ändern (dynamische Typisierung)**
+
+#### Operatoren
+
+![operatoren](/Ressourcen/operatoren.PNG)
+
+#### Kontrollstrukturen
+
+Wie in Java
+
+- if (Bedingung)
+- if (Bedingung)  else
+- switch(x) { case 1:
+- for (i=0;i<x;i++)
+- while(Bedingung)
+- do { } while(Bedingung);
+
+#### Funktionen
+
+**Definition: Eine Funktion kapselt Anweisungen in einen, von anderer Stelle aufrufbaren Block. JavaScript Funktionen sind referenzierbar.**
+
+Allgemein:
+
+```javascript
+function Funktionsname(Parameter 1, Parameter 2, …) {
+ // JavaScript - Anweisungen
+}
+
+```
+
+Beispiele:
+
+Normale Funktion:
+
+```javascript
+// Deklariere Funktion
+function function1(param) {
+	return param * param;
+}
+// Benutze Funktion
+function1(2);
+```
+
+Funktion als Variable:
+
+```javascript
+// Deklariere Funktion und speichere Referenz auf Funktion in Variable
+	let functionVar1 = function(param) {
+	return param * param;
+}
+console.log(typeof functionVar1); // Ausgabe: function
+// Benutze Funktion
+functionVar1(2); // Ausgabe: 4
+```
+
+Funktion mit default Value:
+
+```javascript
+// Function with default value
+function defaultValue(param=2) {
+	return param * param;
+}
+console.log(defaultValue()); // Ausgabe: 4
+console.log(defaultValue(4)); // Ausgabe: 16
+```
+
+Funktio mit Rest-Parameter
+
+```javascript
+function addAll(value1, ...valuesN) {
+	let val = value1;
+	for(var i=0; i < valuesN.length;i++) {
+		val += valuesN[i];
+	}
+	return val;
+}
+console.log(addAll(1,2)); // Ausgabe: 3
+console.log(addAll(1,2,3,4,5,6)); // Ausgabe: 21
+
+```
+
+Funktionen haben als Standart-Rückgabewert: "undefined"
+
+### Objektorientierung
+
+#### Objekte
+
+**Definition: In JavaScript sind Objekte eine strukturierte Sammlung von Attributen. Attribute können beliebige Typen an Daten halten. JavaScript Objekte werden nicht (notwendigerweise) aus Klassen erzeugt.**
+
+*Möglichkeiten von Objekten:*
+
+- können eine Menge primitiver Attribute halten
+- können eine Menge von Objekten halten
+- können eine Menge von Funktionsreferenzen halten
+- können als Vorlage für andere Objekte dienen (templateing)
+
+Eigenschaften:
+
+- Attribute sind immer public
+- Zugriff auf Attribute mit this oder Objektreferenz
+
+```javascript
+// Objekt deklarieren
+let obj = {
+	// Objekt mit einer Eigenschaft ausstatten
+	eigenschaft : 'grün',
+	// Objekt mit einer Methode ausstatten
+	methode : function() {
+		console.log(this.eigenschaft); // Ausgabe: grün
+		console.log(obj.eigenschaft); // Ausgabe: grün
+	}
+}
+obj.methode();
+```
+
+**Definition: JavaScript Objekte können zur Laufzeit Attribute und Funktionen zugewiesen bekommen.**
+
+```javascript
+// Objekt deklarieren
+let obj = new Object();
+// Objekt mit einer Eigenschaft ausstatten
+obj.eigenschaft = 'grün';
+// Objekt mit einer Methode ausstatten
+obj.methode = function() {
+	console.log(this.eigenschaft); // Ausgabe: grün
+	console.log(obj.eigenschaft); // Ausgabe: grün
+}
+obj.methode();
+```
+
+#### Klassen
+
+**Definition: JavaScript Klassen bilden Prototyp-Objekte.**
+
+**Eigenschaften:**
+
+- JavaScript-Klassen sind Objekte
+- Methoden werden ohne Schlüsselwort definiert
+- constructor() ist die Methode, die als Konstruktor-Methode verwendet wird Attribute werden im Konstruktor deklariert
+- Zugriff auf Attribute in Methoden ausschließlich mit this.
+- Objekte aus Klassen sind zur Laufzeit normale Objekte mit allen Fähigkeiten
+- Klassen unterstützen einfache Vererbung
+- Klassen können erst nach ihrer Deklaration verwendet werden (kein hoisting)
+- Eingeführt in ES6. Einfacherer Syntax als das zuvor gebräuchliche prototyping
+
+````javascript
+class Klassenname {
+	constructor(parameter) { }
+	methodenName(parameter) { }
+}
+````
+
+Beispiel:
+
+```javascript
+class MeineKlasse {
+	//Hier gibt es keine Attribut-Deklarationen
+	constructor(param1) {
+		// Hier kommen Attributdeklarationen
+		this.attribut1 = param1;
+		this.attribut2 = undefined;
+	}
+	methode1() {
+		return this.attribut1;
+	}
+}
+meineVar = new MeineKlasse(20);
+console.log(meineVar.attribut1); // Ausgabe: 20
+console.log(meineVar.methode1()); // Ausgabe: 20
+meineVar.attribut3 = 42;
+console.log(meineVar.attribut3); // Ausgabe: 42
+```
+
+##### getter und setter
+
+Get und Set sind Schlüsselwörter und können etwas anders benutzt werden, als in Java. 
+
+```javascript
+// Klasse anlegen
+class MeineKlasse {
+	constructor(param1) {
+	// Hier kommen Attributdeklarationen
+	this.attribut1 = param1; // Ruft den Setter auf
+	this.attribut2 = 10; // Legt das Attribut an
+	}
+	get attribut1() {
+		console.log('get attribut1');
+		return this.a1;
+	}
+	set attribut1(param1) {
+		console.log('set attribut1');
+		this.a1 = param1;
+	}
+}
+meineVar = new MeineKlasse(20); // Ausgabe: set attribute1
+console.log(meineVar.attribut1); // Ausgaben: get attribut1, 20
+console.log(meineVar.attribut1()); // attribut1 is not a function
+console.log(meineVar.a1); // Ausgabe: 20
+console.log(meineVar.attribut2); // Ausgabe: 10
+```
+
+#####Vererbung
+
+**Eigenschaften:**
+
+- Einfache-Vererbung, keine Mehrfachvererbung
+- Es werden alle Methoden der Elternklasse geerbt
+- Attribute werden über den Eltern-Konstruktor geerbt
+- Eltern-Konstruktor muss verwendet werden, sobald this in Elternklasse verwendet wurde und ein Konstruktor in der abgeleiteten Klasse genutzt wird
+- Eltern-Konstruktor wird automatisch verwendet, wenn kein abgeleiteter erstellt wird.
+- Methoden können Methoden der Elternklasse überdecken
+- Wird ein Getter überdeckt, muss auch der Setter überdeckt werden
+
+```javascript
+// Klasse anlegen
+class MeineKlasse {
+	… // Wie zuvor
+}
+class MeineKlasse2 extends MeineKlasse {
+	constructor(param1) {
+	super(param1); //Zwingend
+	this.attribut1 = 55;
+}
+	get attribut1() {
+	return this.a1;
+	}
+	set attribut1(param1) {
+	this.a1 = param1 * 2;
+	}
+}
+meineVar = new MeineKlasse2(20);
+console.log(meineVar.attribut1); // Ausgabe: 110
+console.log(meineVar.attribut2); // Ausgabe: 10
+
+```
+
+### JSON
+
+**Definition: JSON (JavaScriptObjectNotation) ist ein Format für den Datenaustausch zwischen Anwendungen. Es basiert auf einer JavaScript konformen Darstellung der Daten.**
+
+**Eigenschaften:**
+
+- JSON Dokumente können in JavaScript Objekte transformiert werden
+- kann mit der JavaScript Funktion eval() interpretiert werden
+- ist kompakter als XML
+- Es gibt Interpreter für viele Sprachen
+
+**Datentypen:**
+
+- Alle JavaScript Datentypen, aber keine Referenzen und undefined
+
+**Unterschiede in der Notation:**
+
+- Namen von Eigenschaften in doppelte Anführungszeichen
+- Strings immer in doppelte Anführungszeichen
+- Keine führenden Nullen
+
+Beispiel: 
+
+JSON-File: 
+
+````JSON
+{
+	"attribut1" : 42,
+	"array1" : ["w1","w2","w3","w4"],
+	"object1" : {"at1" : 1,"at2" : 2}
+}
+````
+
+JSON->Object
+
+```javascript
+let jsonStr="{\"attribut1\":42, \"array1\":[\"w1\",\"w2\",\"w3\",\"w4\"]}";
+jsonObj = JSON.parse(jsonStr);
+for(var attr in jsonObj) {
+	console.log(attr);
+	if(typeof jsonObj[attr] == "object") {
+		for(var i in jsonObj[attr]) {
+			console.log("> " + jsonObj[attr][i]);
+		}
+	}
+}
+Ausgabe:
+attribut1
+array1
+> w1
+> w2
+> w3
+> w4
+```
+
+Object->JSON
+
+````javascript
+let obj = {
+	attr1 : 42,
+	array1 : [1,2,3,4],
+	object1 : {sub1 : "sub1", sub2 : "sub2"}
+}
+let newJsonStr = JSON.stringify(obj);
+console.log(newJsonStr);
+Ausgabe:
+{"attr1":42,"array1":[1,2,3,4],"object1":{"sub1":"sub1","sub2":"sub2"}}
+
+````
+
+### (a)synchrone Funktionen
+
+**Definition: Synchron ausgeführte Funktionen, werden strikt in der Reihenfolge ihres Aufrufs ausgeführt. Asynchrone Funktionen lassen die Ausführung anderer Funktionen während ihrer eigene Ausführung zu.**
+
+**Wichtige Eigenschaften von JavaScript zu Synchronizität:**
+
+- JavaScript wird üblicherweise als single-thread ausgeführt
+- Asynchron != Nebenläufig (Javascript-Asynchron ~ Queue)
+- Viele eingebaute Funktionen arbeiten asynchron
+
+**Synchron:**
+
+- Funktionen werden nacheinander ausgeführt
+- Ergebnis ist bei Rückkehr aus der Funktion bekannt
+
+**Asynchron:**
+
+- Funktionen werden nebeneinander ausgeführt
+- Ergebnis ist bei Rückkehr aus der Funktion wahrscheinlich nicht bekannt
+
+| Vorteile                                 | Nachteile                                |
+| ---------------------------------------- | ---------------------------------------- |
+| Vermeiden eventuell langer Wartezeiten (laden von Ressourcen) | Programmablauf ist schwerer nachzuvollziehen |
+| Effizientes abarbeiten der Funktionen    | Programmablauf ist nicht immer gleich    |
+| Bessere UserExperience, kein „einfrieren“ der Seite | Unübersichtlicherer Programmcode         |
+| Ergebnisse werden geliefert, sobald sie verfügbar sind | Wie könne asynchrone Funktionen Ergebnisse liefern? |
+| Zeitgesteuerte Funktionsaufrufe sind nur asynchron möglich | Gleichzeitiger Zugriff auf gemeinsame Ressourcen problematisch |
+
+##### Callbacks
+
+**Definition: Der Callback-Mechanismus für asynchrone Funktionen besteht darin, der asynchron ausgeführten Funktion eine CallbackMethode als Parameter mitzugeben, diese wird durch die asynchrone Funktion aufgerufen.**
+
+```javascript
+function asyncFunc(callbackFunc);
+callbackFunc = function(result) { … };
+```
+
+Beispiel:
+
+````javascript
+function printAtTime() {
+	console.log("Time is over!");
+}
+setTimeout(printAtTime,100);
+for(var i=0; i < 10000; i++) {
+	console.log("I'am dooing hard work");
+}
+````
+
+##### Promises
+
+**Definition: Der Prommise-Mechanismus für asynchrone Funktionen liefert ein Promise-Objekt als sofortige Antwort, welches nach Beendigung eine Funktion aufruft**
+
+**Eigenschaften:** 
+
+- Promise-Objekt kennt Ausführungsstatus
+- Executor-Funktion wird sofort ausgeführt
+- Executor-Funktion ruft eine asynchrone Funktion auf
+- Asynchrone Funktion ruft resolve oder reject-Funktion auf
+- Resolve-Funktion wird mit then() registriert (1 Parameter)
+- Reject-Funktion wird mit then() registriert (2 Parameter)
+- Werden Funktionen erst registriert, nachdem die asynchrone Funktion fertig ist, werden sie direkt ausgeführt.
+
+![promises](/Ressourcen/promises.PNG)
+
+Beispiel:
+
+```javascript
+var promise = new Promise(
+	function(resolve,reject){
+		setTimeout(function() {
+			console.log("I do something that needs time...");
+			resolve("done!");
+		},2000);
+	}
+);
+promise.then(function(erg) { console.log(erg)});
+console.log("This should be printed before done!");
+```
+
+### Browser-Objekte
+
+**JavaScript nimmt die Browserumgebung über Objekte war und tritt über diese Objekte in Wechselwirkung mit seiner Umgebung**
+
+**Browser-Objekte:**
+
+- beschreiben Eigenschaften und Funktionalitäten
+- sind hierarchisch angeordnet
+- sind nicht durchgehend standardisiert (aber weit verbreitet)
+
+![browserObjekte](/Ressourcen/browserObjekte.PNG)
+
+**Eine Auswahl der meiner Meinung nach wichtigsten Browser-Objekte** 
+
+##### window
+
+![window01](/Ressourcen/window01.PNG)
+
+![window02](/Ressourcen/window02.PNG)
+
+##### location
+
+![location](/Ressourcen/location.PNG)
+
+
+
+##### navigator
+
+![navigator](/Ressourcen/navigator.PNG)
+
+
+
+##### document
+
+![document](/Ressourcen/document.PNG)
+
+#### Browser API localStorage/WebStorage
+
+**Definition: WebStorage bezeichnet zwei standardisierte Schnittstellen für clientseitigen assoziativen Speicher**
+
+**Eigenschaften:**
+
+- Speichern von umfangreicheren Datenmengen im Browser (mind. 5MB)
+- Vom W3C standardisiert in den meisten aktuellen Browsern implementiert
+- Zugriff per JavaScript
+- Speicherung von Key-Value Paaren
+- Key und Value sind Strings
+- Tipp: Umfangreichere Werte als JSON speichern
+- PerOrigin (für jede Weburl und das dabei verwendete Protokoll)
+- Zwei Schnittstellen: localStorage und sessionStorage
+  - APIs der Schnittstellen identisch
+  - localStorage: Daten bleiben Dauerhaft erhalten, über BrowserNeustarts hinweg
+  - sessionStorage: Daten werden beim Schließen des Tabs gelöscht
+
+**Methoden:**
+
+```javascript
+localStorage.setItem(KEY,VALUE); //Fügt ein neues Key-Value-Paar in den Speicher ein
+localStorage.getItem(KEY); //Holt den Wert zum angegebenen Key aus dem Speicher
+localStorage.removeItem(KEY); //Löscht den Wert zum angegebenen Key aus dem Speicher
+localStorage.clear(); //Löscht den gesamten Speicher
+```
+
+Beispiel:
+
+```javascript
+// Test if Storage is supported
+if (typeof(Storage) !== "undefined") {
+	let visits = localStorage.getItem("visits");
+	if(visits) { // Test if visits is not undefined
+		visitsNo = parseInt(visits); // parse because storage is string only
+		visitsNo++;
+		localStorage.setItem("visits",visitsNo);
+      
+		if(visitsNo>5) {
+			localStorage.removeItem("visits");
+		}
+	} 
+  	else {
+		localStorage.setItem("visits",1);
+	}
+	console.log("This is your " + localStorage.getItem("visits") + " visit");
+} 
+else {
+	console.log("Sorry! No Web Storage support..");
+}
+```
+
+### Webworker
+
+**Definition: Die WebWorker API ermöglicht es JavaScripte im Hintergrund auszuführen, selbst dann, wenn eine Webapplikation nicht angezeigt wird.**
+
+**Eigenschaften:**
+
+- Skripte können im Hintergrund ausgeführt werden (Nebenläufige Ausführung)
+- Zwei Varianten: Dedicated Workers und Shared Workers
+- WebWorker Skripte haben eingeschränkten Zugriff auf Objekte außerhalb
+- Nur Zugriff auf: navigator-Objekt, location-Objekt (lesend), Anwendungscache
+- Ausführung komplexer Berechnungen ohne die Seite zu beeinflussen
+- Datenaustausch zwischen Seite und Worker über Methoden
+- Datenaustausch immer mit Datenkopie
+- Standardisiert vom W3C
+- PerOrigin-Policy WebWorker werden nur von der gleichen Adresse ausgeführt
+- Keine generelle Ausführung von WebWorkern aus dem fileSystem
+
+### Service Worker
+
+**Definition: Die Service Worker API ermöglicht es JavaScripte zu schreiben, die eine offline-Funktionalität der Webanwendung sicherstellen.**
+
+**Eigenschaften:**
+
+- Ermöglicht WebAnwendungen eine bessere offline-Funktionalität
+- Basiert auf WebWorkern
+- Kein Zugriff auf Seiten-Elemente
+- Funktionieren ähnlich wie Proxy-Server
+- Ermöglichen das explizite cachen von Inhalten
+- Ermöglichen es Netzwerkanfragen zu modifizieren
+- Service Worker funktionieren nur in https-Umgebungen
+- PerOrigin-Policy WebWorker werden nur von der gleichen Adresse ausgeführt
+- Laufen im Hintergrund, auch wenn die Seite nicht angezeigt wird
+
+Basieren auf zwei Datein. 
+
+1. Die serviceworker.js: Prüft ob der Browser ServiceWorker unterstützt und ruft dann die seriveworker-worker.js auf. 
+
+   ```javascript
+   if(navigator.serviceWorker) {
+   	let serviceworker = navigator.serviceWorker.register('/pwa/serviceworkerworker.js');
+   	let succsessfullRegisterFunc = function(reg) {
+   	console.log("Erfolgreich registriert");
+   }
+   let errorRegisterFunc = function(err) {
+   	console.log("Fehler beim Registrieren: " + err);
+   }
+   serviceworker.then(succsessfullRegisterFunc,errorRegisterFunc);
+   } else {
+   	console.log("No ServiceWorker support");
+   }
+
+   ```
+
+   ​
+
+2. Der serviceworker-worker.js. Hat eine load Methode die bei der initlalisierung aufgerufen wird und alle angegeben Datein in den Chace lädt.
+
+   ```javascript
+   // Called on install stage
+   this.addEventListener('install', function(event) {
+   	// Sicherstellen, das zuerst alle Datein im cache landen
+   	event.waitUntil(
+   		caches.open('v1').then(function(cache) {
+   			return cache.addAll([
+   				'/pwa/', // Root muss mit gelistet sein
+   				'//ALLES WAS GESPEICHERT WERDEN SOLL.js/html/css etc.
+   			]);
+   		})
+   	);
+   });
+   ```
+
+   Und einer fetch Methode. die Angeforderte Elemente zurückliefert: 
+
+   ```javascript
+   // Wird aufgerufen wenn Dateien angefragt werden
+   this.addEventListener('fetch', function(evt) {
+   	console.log("Hole " + evt.request.url);
+   	evt.respondWith( // Responde with erwartet eine asynchrone Funktion
+   	caches.match(evt.request).then(
+   	function(res) { // res ist Ergebnis von caches.match()
+   		console.log("Resource >" + res.url + "< aus dem Cache geholt");
+   		return res;
+   		}).catch(function(err) {
+   	console.log("Resource >" + evt.request.url + "< nicht im Cache gefunden"); 
+         //return fetch(evt.request);
+   		})
+   	);
+   });	
+   ```
+
+   Der Browser verwaltet den ServiceWorker nach Initlalisierung selber, die fetch Methode muss also NICHT expliziet genutzt werden.  
+
+   **Die Serviceworker-worker.js MUSS sich root-Verzeichnis befinden**
+
+   ​
+
