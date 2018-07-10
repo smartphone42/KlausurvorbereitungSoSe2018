@@ -1552,3 +1552,324 @@ Basieren auf zwei Datein.
 
    ​
 
+
+## DOM (Vorlesung 6)
+
+**Definition: Das Document Object Model (DOM) ist standardisiertes Fundament moderner Webanwendungen**
+
+**Eigenschaften:**
+
+- zum großen Teil in aktuellen Browsern gleich interpretiert
+- plattform- und sprachunabhängig
+- Schnittstelle für den Zugriff auf XML- und HTML-Dokumente
+- dynamischer Zugriff: Bearbeitung und Löschen von einzelnen Dokumentelementen (Inhalt, Struktur, Layout)
+
+**Das Document Object Model (DOM) wird in JavaScript Objekte abgebildet.**
+
+*Zu beachten:*
+
+- Das DOM wird schrittweise geladen, Skripte im Head werden beim Laden ausgeführt, noch bevor der Rest vom DOM geladen ist
+- Nur Skripte im selben Scope wie das Dokument haben Zugriff auf das DOM. (Kein Zugriff auf DOM aus WebWorkern / ServiceWorkern)
+
+```javascript
+// Funktion die nach dem vollständigen Laden des DOM ausgeführt wird
+window.onload = function() {
+// Hier ist der Zugriff auf DOM Elemente sicher möglich
+}
+```
+
+### Baumstrutkur
+
+**Eine vollständig übertragene Webseite repräsentiert einen hierarchisch geordneten Dokumentenbaum, in dem jedes HTMLElement einen Knoten bildet.**
+
+![tree](/Ressourcen/tree.PNG)
+
+#### Knoten
+
+**Definition: DOM Knoten besitzen Eigenschaften und Methoden, abhängig von ihrem Knotentyp. Sie sind Objekte und über JavaScript zugreifbar.**
+
+*Eigenschaften*:
+
+- können Verweise auf (Kind)-Knoten sein (auch Arrays davon)
+- können Eigenschaftswerte halten (z.B. Namen eines Knoten)
+- können Skript-Definiert sein
+
+```javascript
+Knoten.eingeschaft
+```
+
+*Methoden*:
+
+- sind mächtige Werkzeuge bei der Bearbeitung einer Seite
+- Erlauben das dynamische löschen, verändern oder einstellen von Knoten
+- können nützliche Informationen für die Webanwendung liefern
+
+```
+Knoten.methode()
+```
+
+
+
+**DOM definiert 7 Typen von Knoten**
+
+
+
+| nodeType | Konstanten     | Beschreibung |
+| -------- | -------------- | ------------ |
+| 1        | ELEMENT_NODE   | Element      |
+| 2        | ATTRIBUTE_NODE | Attribut     |
+| 3        | TEXT_NODE      | Text         |
+| 8        | COMMENT_NODE   | Kommentar    |
+| 9        | DOCUMENT_NODE  | Dokument     |
+
+Der Knotentyp kann über die Eigenschaft nodeType abgefragt werden.
+
+```javascript
+if (Knoten.nodeType == 8) alert(„Ich bin ein Kommentar“);
+```
+
+![elementNode](/Ressourcen/elementNode.PNG)
+
+![attNode](/Ressourcen/attNode.PNG)
+
+### DOM Zugriff
+
+HTML für die Beispiele:
+
+```html
+<body>
+	<article id=“art1“>
+		Dies ist mein erster Artikel
+	</article>
+	<section>
+	In diesem Bereich stehen die News
+		<article id=“art2“ origin="mensa">
+			<p>Essen 2.0 in der Mensa!</p>
+		</article>
+	</section>
+</body>
+```
+
+
+
+#### QuerySlector
+
+ein Element anhand eines CSS-Selectors
+
+```javascript
+let allarts = document.querySelectorAll("article");
+	for(var art of allarts) {
+	console.log(art.innerHTML);
+	}
+console.log(document.querySelector("article[origin=mensa]").innerHTML);
+```
+
+#### getElementByID
+
+ein Element anhand einer CSS-ID
+
+```javascript
+console.log(document.getElementById("art1").innerHTML);
+```
+
+### DOM Manipulation
+
+![manNode](/Ressourcen/manNode.PNG)
+
+Beispiele:
+
+appendChild
+
+````javascript
+let firstArt = document.querySelector("article");
+document.getElementById("art2").appendChild(firstArt);
+````
+
+cloneNode
+
+```javascript
+let cloneArt = document.getElementById("art1").cloneNode(true);
+document.querySelector("section").appendChild(cloneArt);
+```
+
+removeChild
+
+```javascript
+let toDelete = document.getElementById("art1");
+toDelete.parentNode.removeChild(toDelete);
+```
+
+replaceChild
+
+```javascript
+let original = document.getElementById("art1");
+let forReplace = original.cloneNode();
+forReplace.innerHTML = "Ich bin der Ersatz";
+original.parentNode.replaceChild(forReplace,original);
+```
+
+
+
+![manAtt](/Ressourcen/manAtt.PNG)
+
+Beispiel:
+
+```javascript
+let artNodes = document.querySelectorAll("article");
+console.log(artNodes[0].getAttributeNode("id"));
+artNodes[0].setAttribute("origin","general");
+console.log(artNodes[1].hasAttribute("origin"));
+artNodes[1].removeAttribute("origin");
+console.log(artNodes[1].hasAttribute("origin"));
+```
+
+#### Knoten erzeugen
+
+ Beispiel: 
+
+createElement(): erzeugt einen neuen html-Elementknoten <br>createTextNode(): erzeugt einen neune Textknoten
+
+````javascript
+let myNewArticle = document.createElement("article");
+myNewArticle.setAttribute("origin","newscenter");
+let myNewText = document.createTextNode("Dies ist ein neuer Artikel");
+myNewArticle.appendChild(myNewText);
+let firstArticle = document.querySelector("section article");
+firstArticle.parentNode.insertBefore(myNewArticle,firstArticle);
+````
+
+### Event-Handling
+
+**Definition: Das Event-Handling im DOM erlaubt das registrieren von Listenern auf bestimmte Ereignisse. Diese Listener sind JavaScriptFunktionen.**
+
+**Eigenschaften:**
+
+- ermöglichen das Abfangen von Ereignissen (Klick, mouseover,…)
+- ermöglichen das Auswerten von Mausbewegungen
+- ermöglichen somit client-seitige Validierung von Eingaben
+- es gibt zahlreiche Events und dazugehörige Event-Objekte
+- es können eigene Events definiert werden
+
+Das Event Handling läuft in zwei Phasen ab, der capture Phase und der Bubble Phase. 
+
+**Ablauf**
+
+1. Ein Event wird ausgelöst
+2. Capture-Phase beginnt
+   1. Jedes Element in der Hierarchie hat die Möglichkeit das Event
+     abzufangen
+3. Deepest-Point
+   1. Das unterste Element in der Hierarchie kann auf das Ereignis
+     reagieren
+4. Bubble-Phase
+   1. Jedes Element in der Hierarchie hat die Möglichkeit zusätzliche
+     Aktionen zu starten
+
+#### Implementierung
+
+type: Name des Event-Typs, der behandelt werden soll <br>
+listener: Funktion, die beim Eintritt ausgeführt werden soll<br>
+capture: boolean, ob der Handler in der Capture-Phase (true) oder in der Bubble-Phase (false) ausgeführt werden soll<br>removeEventHandler: Entfernt einen EventHandler wieder
+
+```javascript
+node.addEventListener(type,listener,capture)
+node.removeEventListener(type,listener,capture)
+```
+
+Die aufgerufene Event-Handler-Funktion bekommt automatisch ein EventObjekt. Je nach aufgetretenem Event hat dieses Event-Objekt unterschiedliche Attribute.
+
+Allgemeine Eigenschaften:
+
+- type: Name des Event-Typs, der aufgetreten ist
+- target: Referenz auf das (unterste) Objekt, welches geklickt wurde
+- currentTarget: Referenz auf das Objekt, das gerade das Ereignis fing
+- eventPhase: Gibt an, in welcher Phase sich das Event befindet timestamp Genauer Zeitpunkt zu dem das Ereignis auftrat
+
+Allgemeine Methoden:
+
+- preventDefault(): Die Standardaktion (des Browsers) für das Ereignis wird nicht ausgeführt
+- stopPropagation(): Der Durchlauf durch die Phasen wird abgebrochen
+
+Beispiel:
+
+HTML:
+
+```html
+<section>
+	In diesem Bereich stehen die News
+<article origin="mensa">
+	<p>Essen 2.0 in der Mensa!</p>
+</article>
+</section>
+```
+
+JSS:
+
+```javascript
+let capture = function(evt) {
+	console.log('captured on ' + evt.currentTarget.nodeName);
+}
+let bubble = function(evt) {
+	console.log("bubble on " + evt.currentTarget.nodeName);
+}
+window.onload = function() {
+	document.querySelector("section").addEventListener("click",capture,true);
+	document.querySelector("section article").addEventListener("click",capture,true);
+	document.querySelector("section article p").addEventListener("click",capture,true);
+	document.querySelector("section").addEventListener("click„,bubble,false);
+	document.querySelector("section article").addEventListener("click",bubble,false);
+	document.querySelector("section article p").addEventListener("click",bubble,false);
+}
+
+```
+
+#### Ereignisse
+
+![ehe](/Ressourcen/ehe.PNG)
+
+![ehe1](/Ressourcen/ehe1.PNG)
+
+##### Beispiel submit
+
+````html
+Dein Kommentar:
+<form id="f" action="">
+	<input type="Text" name="Feld"> <br> <br>
+	<input type="submit" name="Testsubmit" value="Abgeben">
+</form>
+````
+
+```javascript
+let checkForm = function(evt) {
+	let feldvalue =document.getElementsByName("Feld")[0].value;
+	if(feldvalue == "") {
+		alert("Bitte eine Eingabe!");
+	} else {
+	alert("Danke für Ihre Eingabe!");
+	}
+}
+window.onload = function() {
+	let form = document.getElementById("f");
+	form.addEventListener("submit",checkForm);
+}
+```
+
+##### Beispiel keypress
+
+```javascript
+let shortCutHandler = function(evt) {
+	console.log("Sie haben " + evt.key + " gedrückt.");
+	if(evt.ctrlKey) {
+		console.log("Sie haben auch den ctrl-Key gedrückt!");
+	}
+}
+window.onload = function() {
+	let form = document.addEventListener("keypress",shortCutHandler);
+}
+/*
+Beim drücken von ctrl + k:
+Sie haben k gedrückt.
+Sie haben auch den ctrl-Key gedrückt!
+*/
+```
+
