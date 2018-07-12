@@ -1873,3 +1873,440 @@ Sie haben auch den ctrl-Key gedrückt!
 */
 ```
 
+## Client-Server-Kommunikation (Vorlesung 7)
+
+## WebServices (Vorlesung 8)
+
+**Definition: Ein Web Service ist eine Schnittstelle, mit der Daten zwischen Programmen ausgetauscht werden können. Dabei werden WebTechnologien verwendet**
+
+### SOAP WebServices 
+
+Laut eigener Aussage NICHT klausurrelevant
+
+### REST
+
+#### Implementation Serverseitig
+
+##### DatenObjekt-Server
+
+````java
+@XmlRootElement
+public class Article {
+    private final String type;
+    private final String author;
+    public Article(final String type, final String author{
+    	this.type = type;
+        this.author = author;
+    }}
+````
+
+##### Ressourcen
+
+```java
+@Path("Article")
+public class ArticleResource implements Serializable {
+
+ 	@GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getComment(@QueryParam("ArtikelID") Long id) throws JAXBException, IOException {
+       //DO SOMETHING
+      return string;
+    }
+
+    @GET
+    @Path("getMore")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getList(@QueryParam("ArtikelID") Long id) {
+         //DO SOMETHING
+      	return string;
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void create(String comment) {
+        //DO SOMETHING
+    }
+}
+```
+
+Außerdem benötigt der RestWebService noch eine ApplicationConfig, die alle Resourcen Klassen kennt.
+
+```java
+@javax.ws.rs.ApplicationPath("webresources")
+public class ApplicationConfig extends Application {
+    @Override
+    public Set<Class<?>> getClasses() {
+        Set<Class<?>> resources = new java.util.HashSet<>();
+        addRestResourceClasses(resources);
+        return resources;
+    }
+
+    /**
+     * Do not modify addRestResourceClasses() method.
+     * It is automatically populated with
+     * all resources defined in the project.
+     * If required, comment out calling this method in getClasses().
+     */
+    private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(RestService.ArticleResource.class);
+      	...
+
+    }    
+}
+```
+
+
+
+#### Implementation Clientseitig
+
+Abrufen einer Route mit JQuery
+
+```
+$.METHODE(URL/RESOURCE/[PATH])
+```
+
+Beispiel:
+
+```java
+$.get("http://localhost:8080/StudboardRest/rest/Article/getMore", function (data) {
+```
+
+#### Rest Architekturstil
+
+1. Ressourcen basiert
+   1. Schnittstellen dienen immer für genau eine Ressource
+2. Verwendung von Webstandards
+   1. Verwendung von HTTP, URLs, MIME, XML, Json, …
+3. Client-Server-Architektur
+   1. Ein Client fordert Informationen / Aktionen vom Server
+4. Zustandslos
+   1. Weder Server noch Client merken sich Zustände Alle benötigten Daten werden mit einer Anfrage gesendet
+5. Caching
+   1. Einmal gelieferte Daten werden zwischengespeichert
+6. Ressourcen verweisen aufeinander (HATEOAS)
+   1. Links für mögliche Folgeaktionen werden angegeben
+
+#### REST HATEOS
+
+![hateos](/Ressourcen/hateos.PNG)
+
+## Datenbankanbindung (Vorlesung 9)
+
+### JDBC
+
+Möglichkeiten
+
+- Datenbankzugriff aus Java-Applikationen
+- Objektrelationales Mapping
+- stellt relationale Datenbankobjekte bereit
+
+Eigenschaften- 
+
+- JDBC-API setzt auf Java-Basisklassen auf (Paket java.sql)
+- im JDK (Java Development Kit) enthalten
+
+![jdbc](/Ressourcen/jdbc.PNG)
+
+####Verwenden von JDBC
+
+1. Laden des JDBC Treiber
+
+   ````java
+   Class.forName("org.postgresql.Driver");"
+   ````
+
+2. Connect zur Datenbank
+
+   ````java
+   Connection my_con = DriverManager.getConnection(db_url,username, passwort);
+   ````
+
+3. Erzeugen eines Statements
+
+   ````java
+    Statement my_stmt = my_con.createStatement();
+   ````
+
+4. Ausführen eines Statements
+
+   ````java
+   ResultSet my_result = my_stmt.executeQuery(„SELECT * FROM TAB“);
+   ````
+
+5. Auswerten desAbfrageergebnisses
+
+   ````java
+   String sql = "SELECT * FROM autor WHERE id=" + id;
+   ResultSet r =createConnection().createStatement().executeQuery(sql);
+   if (r.next())
+   {
+   name = r.getString("Name");
+   vorname = r.getSt
+   ````
+
+6. Abmelden von der DB
+
+   ````
+   my_con.close(); 
+   ````
+
+#### JDBC Fazit
+
+Nachteile von JDBC:
+
+- Hoher Implementierungsaufwand um aus Daten konkrete JavaObjekte zu erstellen
+- SQL Statements sind schnell spezifisch für eine Datenbank
+
+### JPA
+
+Informationen in Vorlesung 9 Ab Folie 21. Hier ist einfach so ziemlich alles Wichtig und hier die Präsentation 1 zu 1 einzufügen, macht wenig sinn. 
+
+## Serverseitige Anwendungen (Vorlesung 10)
+
+##Entwicklungsmuster (Vorlesung 11)
+
+**Definition: Entwicklungsmuster sind Schablonen für die Umsetzung von Problemlösungen.**
+
+**Architekturmuster**: Bilden Lösungen für die Organisation und Kommunikation von Softwarekomponenten. Siebilden somit Strukturen in größerem Rahmen ab <br>**Entwurfsmuster**: Bilden Lösungen für die Implementierung von häufig anzutreffenden Problemen. Sie bilden
+Strukturen in kleinerem Rahmen ab.
+
+| Arichtekturmuster     | Entwurfsmuster                         |
+| --------------------- | -------------------------------------- |
+| Verteilungsmuster     | Erzeugungsmuster                       |
+| Strukturmuster        | Strukturmuster                         |
+| Interaktivitätsmuster | Verhaltensmuster                       |
+| Adaptionsmuster       | Muster für objektrelationale Abbildung |
+
+
+
+### MV* Muster
+
+**Definition: MV* ist eine Familie von ähnlichen Architekturmustern für graphische Oberflächen.**
+
+### Model View Controller
+
+![mvp](/Ressourcen/mvc.PNG)
+
+**Keine Vorgaben für**
+
+- Platzierung der Geschäftslogik
+- Eingabevallidierung
+
+**Verteilungsmuster**
+
+- Im Webumfeld müssen die Komponenten des MVC auf Client und Server aufgeteilt werdenn
+- Browser übernimmt einige Aufgaben der View und des Controllers
+- Die Server-Software übernimmt AUCH einige Aufgaben des Controllers
+
+#### Server zentriertes MVC
+
+![mvcs](/Ressourcen/mvcs.PNG)
+
+- Browser dient nur zur Darstellung
+- Browser bekommt fertige View vom Server
+- Browser leitet Events an den Cotroller auf der Server-Seite weiter
+- Controller lädt Model, baut View
+- Vorteil: geringe Anforderungen an den Client
+- Nachteil: Client MUSS online sein
+- Nachteil: Umsetzung des Observer-Patterns nicht möglich
+
+#### Client-Server aufgeteiltes MVC
+
+![mvccs](/Ressourcen/mvccs.PNG)
+
+- Einmal geladene Views werden im Browser manipuliert
+- Client Controller fragt Server nach Daten,Berechnungen und Seitenwechsel
+- Server-Controller lädt und liefert Model und View und führt die Geschäftslogik aus
+- Vorteil: wenig Datentrasnfehr
+- Vorteil: Offline Funktionalität möglich
+
+### Volles WEB-MVC mit WebSoeckts
+
+![mvccs](/Ressourcen/mvcws.PNG)
+
+- Wie Client-Server aufteilung
+- Vorteil: Observer Pattern kann (mit WebSockets oder Push) umgesetzt werden
+
+### Model View Presenter
+
+![mvp](/Ressourcen/mvp.PNG)
+
+**Ziel: Trennung von Model und View**
+
+### Model View ViewModel
+
+![mvp](/Ressourcen/mvvm.PNG)
+
+**Ziel: Trennung von Darstellung und Logik der Benutzerschnittstelle**
+
+##Frameworks (Vorlesung 12)
+
+###Bibliotheken
+
+**Bibliotheken für Webanwendungen stellen Funktionen zur Verfügung.**
+
+Bibliotheken sollen die Implementierung erleichtern, indem sie häufig
+verwendete Algorithmen fertig implementiert zur Verfügung stellen.
+Bibliotheken werden häufig in Frameworks verwendet.
+
+### Frameworks
+
+**Definition: Frameworks für Webapplikationen stellen ein Rahmenwerk zur Umsetzung einer Architektur zur Verfügung. Sie beeinflussen den Entwicklungsprozess.**
+
+**Framework nach Technologien**
+
+- CSS Frameworks
+
+  - Hilfsmittel und Gestaltungselemente für das Web-Layout
+
+- JavaScript Frameworks
+
+  - vereinfacht die Nutzung von JavaScript Funktionen
+  - Verinfacht Zugriff und Bearbetiung des DOM
+  - Bieten Funktionsbibliotheken
+
+
+**Frameworks nach Zielsetzung** 
+
+- Desing Framework
+  - Gestaltung der Benutzeroberfläche
+  - Meistens Frameworks, die Webseiten auf Mobile Geräte und große gleichermaßen bringen
+- Architekturframeworks
+  - Zielen darauf ab ein bestimmtes Architekturmuster zu unterstützen
+
+### J-Querry
+
+**Definition: jQuery ist eine JavaScript Bibliothek, die im wesentlichen den Zugriff auf das DOM einfacher gestaltet**
+
+#### DOM Zugriff
+
+-  Zugriff auf DOM-Elemente in Kurzschreibweise
+-  Zugriff über CSS3-Selektoren
+-  Zurückgelieferte Objekte sind jQuery-Objekte mit entsprechenden jQuery Funktionen
+
+```javascript
+$(CSS-Selector).jQueryFunktion()
+```
+
+Beispiel: 
+
+```javascript
+// Setzt den Inhalt eines Elements mit der id ausgabe
+$("#ausgabe").html("Du hast Button 1 geklickt");});
+```
+
+#### DOM-Schutz
+
+- Stellt sicher, dass das komplette Dokument geladen ist
+- Code in der ready-Funktion wird danach ausgeführt
+
+```javascript
+$(document).ready()
+```
+
+Beispiel:
+
+```javascript
+// Erst nach dem vollständigen Laden der Seite ausführen
+$(document).ready(function () {
+	// Setzt den Inhalt eines Elements mit der id Ausgabe
+	$("#ausgabe").html("Das Dokument ist fertig geladen");
+});
+```
+
+#### Event-Handling
+
+```javascript
+$(CSS-Selektor).on(“event“,function)
+```
+
+Beispiel:
+
+```javascript
+// Erst nach dem vollständigen Laden der Seite ausführen
+$(document).ready(function () {
+	$(function() {
+		$("div.test a").on('click', function() {
+		alert("Hello world!");
+        });
+	});
+});
+```
+
+#### Asynchrone Anfragen
+
+- Einfachere Verwendung als mit XmlHttpRequest-Objekt
+- Angabe von Typ, URL und Daten als Attribute
+
+```javascript
+$.ajay({RequestObject});
+```
+
+
+
+Beispiel:
+
+```javascript
+$.ajax({
+	type: "POST",
+	url: "beispiel.php",
+	data: "name=Mustermann&location=Berlin",
+}).done(function(response){
+	alert("Daten gespeichert: " + response);
+});
+
+```
+
+### Bootstrap
+
+**Definition: Boostrap ist ein HTML-CSS Framework für die Gestaltung von Benutzeroberflächen**
+
+#### Layout
+
+- Container-basiert
+- 12-spaltiges Grid System
+- Automatische gleichmäßige Aufteilung
+- Oder Aufteilung nach Anteilen von 12
+- Responsive Layout
+
+Beispiel:
+
+```javascript
+<div class="container">
+	<div class="row">
+		<div class="col">
+			1 of 2
+		</div>
+		<div class="col">
+			2 of 2
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			1 of 3
+		</div>
+		<div class="col">
+			2 of 3
+		</div>
+		<div class="col">
+			3 of 3
+		</div>
+</div>
+```
+
+![bootstrap](/Ressourcen/bootstrap.PNG)
+
+### Knockout.js
+
+**Definition: Knockout.js ist ein JavaScript-Framework für die Umsetzung des MVVM-Entwicklungsmusters**
+
+Mehr in Vorlesung 12 Ab Folie 21. Wirkt aber nicht Klausurrelevant
+
+### Angular
+
+**Definition: Angular ist ein CSS-, JavaScript-, Architektur-Framework.**
+
+
+## Java Server Faces (Vorlesung 13)
+
+Laut eigener Aussage NICHT klausurrelevant
