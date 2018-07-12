@@ -2009,7 +2009,7 @@ fetch('fetchapi.json').then(
 
 Grund ist, das ansonsten leicht manipulierte Inhalte in eine Seite eingeschleust werden könnten.
 
-###WebServer
+### WebServer
 
 **Definition: Ein WebServer stellt Dateien und Dienste über ein Netzwerk zur Verfügung.**
 
@@ -2206,7 +2206,7 @@ Eigenschaften-
 
 ![jdbc](/Ressourcen/jdbc.PNG)
 
-####Verwenden von JDBC
+#### Verwenden von JDBC
 
 1. Laden des JDBC Treiber
 
@@ -2441,9 +2441,9 @@ Strukturen in kleinerem Rahmen ab.
 
 **Ziel: Trennung von Darstellung und Logik der Benutzerschnittstelle**
 
-##Frameworks (Vorlesung 12)
+## Frameworks (Vorlesung 12)
 
-###Bibliotheken
+### Bibliotheken
 
 **Bibliotheken für Webanwendungen stellen Funktionen zur Verfügung.**
 
