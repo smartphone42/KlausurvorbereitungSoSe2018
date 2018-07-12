@@ -1875,9 +1875,208 @@ Sie haben auch den ctrl-Key gedrückt!
 
 ## Client-Server-Kommunikation (Vorlesung 7)
 
+### Dynamisches Laden
+
+**Definition: Dynamisches Laden von Ressourcen bezeichnet das Laden von Ressourcen, wenn sie benötigt werden.**
+
+Dynamisches Laden von Ressourcen erfolgt mittels JavaScript und kann
+synchron oder asynchron erfolgen.
+
+**Synchrones Laden:**
+
+- Blockiert den Programmfluss
+
+- Benutzer müssen auf den Abschluss des Ladevorgangs warten das Skript „hängt“
+
+- Der Programmfluss ist einfach nachvollziehbar
+
+**Asynchrones Ladens:**
+
+  - Datenübertragung zwischen Client und Server asynchron im Hintergrund
+  - der Anwender bemerkt nichts von der Datenübertragung
+  - die Anwendung kann weiterhin bedient werden (z.B Reaktion auf click)
+  - Der Programmablauf ist nicht einfach Nachvollziehbar
+  - Nach dem Laden wird ein Ereignis „onLoadReady“ ausgelöst
+
+#### Ajax Datenübertragung
+
+| synchron                                 | asynchron                                |
+| ---------------------------------------- | ---------------------------------------- |
+| Antwort erfolgt erst nach vollständiger Übertragung aller angeforderten Daten | Antwort des Servers erfolgt sofort       |
+| Anfrage bleibt aktiv, bis Antwort vom Server erzeugt wurde | Nächster Request kann gestellt werden,noch bevor vorheriger beantwortet wurde |
+| Ergebnis nach der Übertragung sofort und komplett verfügbar | beliebige Elemente einer Seite können isoliert aktualisiert werden. |
+| keine Statusinformationen währendDatenübertragung verfügbar | aktueller Status wird während der Anfrage ständig geliefert |
+
+##### Ajax 
+
+**Definition: Asynchron Javascript And XML (AJAX) ist keine neue Technologie, sondern eine sinnvolle Kombination bestehender Technologien**
+
+Ajax besteht aus: 
+
+- XMLHTTPRequest-Objekt
+
+- JavaScriot als Schnitstelle aller Komponenten
+
+- DOM
+
+- XML
+
+  ![ajax](/Ressourcen/ajax.PNG)
+
+#### XMLHTTPRequest
+
+**Definition: Das XMLHttpRequest-Objekt ermöglicht Client/ServerKommunikation mittels JavaScript**
+
+Eigenschaften:
+
+- Übertragung von Textinhalten (und alles was als Text darstellbar ist)
+- Übertragung von Binärdaten (unter Nutzung der base64 Codierung)
+- Übertragung verläuft asynchron
+- nach Erhalt der Daten wird eine callback-Methode aufgerufen
+- unterstützt auch andere Protokolle (z.B. ftp, file,…)
+
+![XMLHTTPRequest](/Ressourcen/htmlrquest.PNG)
+
+```javascript
+//method zu verwendende HTTP-Methode (GET, POST,…)
+//url URL für gefordertes Dokument (z.B. http://mysite.de/doc.json)
+//syncFlag asynchron (true; default) oder synchron (false) abfragen
+//username Benutzername falls erforderlich
+//password Passwort falls erforderlich
+open(method, url[,syncFlag, username, password])
+
+//body Daten die mitgesendet werden sollen
+send(body|null)
+```
+
+Beispiel:
+
+```javascript
+// Funktion zum Reagieren auf einen Status-Wechsel
+var readyStateCallbackFunction = function() {
+	if (this.readyState == 4 && this.status == 200) {
+		console.log("Folgene Antwort erhalten: ");
+		console.log(this.responseText);
+	} else {
+		console.log("readyState: " + this.readyState + " Status: " +this.status);
+		}
+};
+window.onload = function() {
+	let requestor = new XMLHttpRequest();
+	requestor.open("GET","xmlhttprequest.json");
+	requestor.onreadystatechange = readyStateCallbackFunction;
+	requestor.send();
+}
+
+```
+
+#### FetchAPI
+
+**Definition: Die FetchAPI ist eine API für den Zugriff auf Ressourcen. Sie bietet flexiblere und umfangreichere Möglichkeiten als das XMLHttpRequest**
+
+Eigenschaften:
+
+- Zugriff auf lokale wie Netzwerkressourcen
+- Umfangreiches Toolset
+- Verwendet das Promise-Konzept
+- Verwendbar in Web- und ServiceWorkern
+- Konfiguration der Anfrage mit init-Objek
+
+Beispiel: 
+
+```javascript
+fetch('fetchapi.json').then(
+  function(response) {
+		console.log("Get response as json-Promise");
+		return response.json();
+	}
+).then(
+	function(jsonData) {
+		console.log("recived data: " + jsonData);
+	}
+).catch(function(err) {
+	console.log("Opps, Something went wrong!", err);
+})
+```
+
+#### Response
+
+![response](/Ressourcen/response.PNG)
+
+#### Cross Domain Access
+
+**Definition: Die Same-origin Policy besagt, dass Browser Anfragen von einer geladenen Seite nur an die Quelle der geladenen Seite erlauben.**
+
+Grund ist, das ansonsten leicht manipulierte Inhalte in eine Seite eingeschleust werden könnten.
+
+###WebServer
+
+**Definition: Ein WebServer stellt Dateien und Dienste über ein Netzwerk zur Verfügung.**
+
+- File-Server
+  - verwalten Dateien
+- Web-Server
+  - Anfragen per HTTP
+  - erlaubt das ausführen von Skripten und somit dynamische Inhalte
+- Web-Application Server
+  - Erlaubt die Ausführung von Programmen höherer Sprachen
+  - Kapselt Datenquellen
+  - Standartisierte Schnittstellen zu anderen Diensten
+  - Unterstützt einen Software-Lifecycle
+
+
+| Web-Server Elemente | Definition                               |
+| ------------------- | ---------------------------------------- |
+| Interfaces          | Ein WebServer Interface ist die Verbindungsstelle zwischen dem WebServer und einer Programmausführung |
+| CGI                 | Das Common Gateway Interface (CGI) ist ein Standard für den Datenaustausch zwischen Server und nativer Anwendung |
+
+![webarchive](/Ressourcen/webarchive.PNG)
+
+### Authentifizierung
+
+#### HTTP Auth
+
+**Definition: Das HTTP Protokoll definiert ein paar einfache Methoden um den Zugriff auf Dateien zu beschränken.**
+
+**HTTP – Basic** 
+
+- seit HTTP 1.0
+- Benutzername und Passwort werden unverschlüsselt übertragen
+
+**HTTP – Digest Authentifizierung**
+
+-  seit HTTP 1.1
+-  symmetrische Verschlüsselungstechnik
+-  Passwort wird nicht an den Server übertragen
+-  Vorgang:
+
+1. Server generiert Zufallswert
+2. clientseitige Verknüpfung des Zufallswertes mit dem Passwort
+3. von der Verknüpfung wird ein Hash-Code berechnet
+4. Übertragung des Hashcodes an den Server
+
+#### Application Auth
+
+**Definition: Bei der Authentifizierung über eine Anwendung werden die Daten über ein Formular in der Webanwendung an den Server weitergereicht.**
+
+#### HTTPS Auth
+
+**Definition: Bei der Authentifizierung über HTTPS (SSL) wird der Anwender über einen Schlüsselaustausch identifiziert.**
+
+### Session Managment
+
+**Definition: Eine Session beschreibt einen Dialog, der sich über mehrere Requests und Responses erstreckt. Session Management befasst sich mit dem Sammeln und Speichern von Informationen innerhalb einer Session.**
+
+
 ## WebServices (Vorlesung 8)
 
 **Definition: Ein Web Service ist eine Schnittstelle, mit der Daten zwischen Programmen ausgetauscht werden können. Dabei werden WebTechnologien verwendet**
+
+*Hidden Fields:*  Hidden Fields sind HTML-Formularfelder, die name = “wert“ –Paare an den Server übertragen und die für den Benutzer nicht sichtbar sind.
+
+*URL Rewriteing*: Beim URL Rewriting werden Session- Informationen als Teil der URL an den Server übertragen. 
+
+*Cookies*: Beim Cookies sind kleine, im Browser gespeicherte Datenblöcke, die bei jedem HTTP-Request zum Server übertragen werden.
 
 ### SOAP WebServices 
 
@@ -2062,6 +2261,109 @@ Nachteile von JDBC:
 Informationen in Vorlesung 9 Ab Folie 21. Hier ist einfach so ziemlich alles Wichtig und hier die Präsentation 1 zu 1 einzufügen, macht wenig sinn. 
 
 ## Serverseitige Anwendungen (Vorlesung 10)
+
+### Servlets
+
+**Definition: Servlets sind Servererweiterungen (serverseitige JavaKomponenten). Sie antworten auf ganz Anfragen eines Clients mit einem dedizierten dynamisch erzeugten Inhalt.**
+
+**Eigenschaften**
+
+- Ausführung von Java-Programmen auf dem Server
+- Programme werden als JVM-Thread ausgeführt
+- Datenaustausch unter Anwendungen
+- Direkte Manipulation von HTTP-Headern
+- Leistungsfähigkeit
+  - Es stehen alle Leistungsmerkmale und Bibliotheken der Sprache Java zur Verfügung.
+- Effizienz
+  - Nach dem Laden verbleibt ein Servlet - Objekt im Speicher des Webservers, sein Zustand
+    erhalten. Das ermöglicht über Sessionhandling ein Ausgleichen des zustandslosen HTTP Protokolls
+- Sicherheit
+  - Robustheit resultiert aus Sprachimplementierung und Fehlerbehandlung auf Seiten des
+    Webservers, um Serverabstürze zu verhindern. 
+  - Webserver stellt Java Security Manager zur Verfügung.
+- Einfachheit
+  - Servlet-API ist einfach und übersichtlich und enthält Features, die die Entwicklung
+    vereinfachen
+
+#### Servlet Container
+
+Servlets werden in einem Servlet-Container ausgeführt
+
+Aufgaben des Servlet-Containers:
+
+- Kommunikation zwischen Server und Servlet
+- Lifecycle – Management der Komponenten
+- Multithreading
+- Methodenaufrufe bei Client - Anfragen
+
+#### Servlet
+
+![servlet](/Ressourcen/servlet.PNG)
+
+Beispiel:
+
+```java
+public class ActivityLoggerServlet extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+    throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		try (PrintWriter out = response.getWriter()) {
+			out.println("<!DOCTYPE html>");
+			out.println("<html>");
+			out.println("<body>");
+			out.println("</body>");
+			out.println("</html>");
+		}
+	}
+}
+```
+
+#### Servlets Lebenszyklus
+
+1. Laden der Servletklasse
+
+2. Instanziieren des Servlet Objektes
+
+3. Initialisiereden des Servlet Objektes
+
+4. Anforderungen bearbeiten
+
+5. Servlet Objekt entfernen
+
+
+
+![servlet](/Ressourcen/lifeofservlet.PNG)
+
+### JSP
+
+**Definition: Java Server Pages sind eine Websprache zum Entwickeln von Weboberflächen für Java-Anwendungen.**
+
+**Eigenschaften**
+
+-  Präsentationsschicht von Webanwendungen
+-  Web-Scriptsprache auf Grundlage der zahlreichen Java - APIs
+-  Ermöglichen Integration von existierenden Systemen ins Web
+-  Basiert auf der Java-Servlet-API
+-  Mischen von HTML (XML) mit JSP in einer Seite möglich
+-  Ermöglicht konsequente Aufgabentrennung in Web-Entwicklerteams
+-  Daten werden mithilfe von Java - Beans in die Webseiten transportiert
+-  Zunehmend abgelöst durch JSF (Java Server Faces) und JavaFX
+
+#### JSP Lebenszyklus
+
+Jede JSP wird im Verlauf Ihres Lebenszyklus vom Container zunächst in ein Servlet transformiert. Zur Ausführung kommen immer nur Servlets.
+
+1. Servlet Container erhält HTTP-Anfrage
+2. Servlet Container identifiziert JSP-Anfrage (URL Mapping)
+3. Servlet Container ruft JSP Engine auf
+4. JSP Engine prüft, ob für Anfrage bereits eine aktuelle kompilierte JSP existiert
+5. Falls nicht, wird die entsprechende JSP-Seite aus Dateisystem geladen und ein Servlet erzeugt
+6. Übersetzen des Servlets und Bereitstellen für ClassLoader
+
+### JSP vs Servlets
+
+![jvs](/Ressourcen/jspVSservlets.PNG)
 
 ##Entwicklungsmuster (Vorlesung 11)
 
