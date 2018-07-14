@@ -4,6 +4,13 @@
 
 ### Zählen Sie die Ziele des Kernel-Call Mechanismus auf (3 Punkte)
 
+- Erhöhung der Geschwindigkeit 
+- Vereinfachung der Programmierung
+- Schutz von Speicherbereichen
+- Einsparung von Energie
+- Senkung der Taktfrequenz
+- Entkopplung von User und System
+
 ###Erklären Sie die Bedeutung bzw. Wirkung folgender Befehlssequenz für die Kommandozeile (4 Punkte):
 
 cat *.txt | grep Achtung > achtung
