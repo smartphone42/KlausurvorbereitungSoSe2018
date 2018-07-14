@@ -8,7 +8,7 @@
 - Schutz von Speicherbereichen
 - Entkopplung von User und System
 
-###Erklären Sie die Bedeutung bzw. Wirkung folgender Befehlssequenz für die Kommandozeile (4 Punkte):
+### Erklären Sie die Bedeutung bzw. Wirkung folgender Befehlssequenz für die Kommandozeile (4 Punkte):
 
 cat *.txt | grep Achtung > achtung
 
