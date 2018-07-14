@@ -8,7 +8,7 @@
 - Schutz von Speicherbereichen
 - Entkopplung von User und System
 
-###Erklären Sie die Bedeutung bzw. Wirkung folgender Befehlssequenz für die Kommandozeile (4 Punkte):
+### Erklären Sie die Bedeutung bzw. Wirkung folgender Befehlssequenz für die Kommandozeile (4 Punkte):
 
 cat *.txt | grep Achtung > achtung
 
@@ -36,7 +36,7 @@ cat *.txt gibt den Inhalt jeder txt im aktuellen Verzeichniss aus <br>|grep Acht
 
 59,8 präemptiv
 
-## Aufgabe 3
+## Aufgabe 3 (20 Punkte)
 
 ### LRU
 
@@ -55,12 +55,12 @@ cat *.txt gibt den Inhalt jeder txt im aktuellen Verzeichniss aus <br>|grep Acht
 | ------ | ----- | -------- | -------------- | ----- | ----- |
 | 0      | 8     | 103      | 103            | 1     | 1     |
 | 1      | 9     | 81       | 15             | 0     | 1     |
-| 2      | 1     | 100      | 40             | 0     | 1     |
+| 2      | 1     | 100      | 40             | 0     | 0     |
 | 3      | 4     | 82       | 82             | 1     | 1     |
 | 4      | 0     | 102      | 110            | 1     | 1     |
 | 5      | 6     | 101      | 90             | 0     | 1     |
 
-## Aufgabe 4
+## Aufgabe 4 (20 Punkte)
 
 *Da sich in Markdown keine gescheiten Matrizen darstellen lassen, schreibe ich die einfach in eine Reihe, ein "|" gibt an, dass hier eigentlich eine neue Zeile anfangen würde.*  
 
