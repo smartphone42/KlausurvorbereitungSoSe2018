@@ -8,7 +8,7 @@
 - Schutz von Speicherbereichen
 - Entkopplung von User und System
 
-### Erklären Sie die Bedeutung bzw. Wirkung folgender Befehlssequenz für die Kommandozeile (4 Punkte):
+###Erklären Sie die Bedeutung bzw. Wirkung folgender Befehlssequenz für die Kommandozeile (4 Punkte):
 
 cat *.txt | grep Achtung > achtung
 
@@ -46,7 +46,7 @@ cat *.txt gibt den Inhalt jeder txt im aktuellen Verzeichniss aus <br>|grep Acht
 | 1      | 4     | 80       | 80             | 1     | 1     |
 | 2      | 1     | 30       | 40             | 1     | 1     |
 | 3      | 8     | 100      | 100            | 1     | 1     |
-| 4      | 0     | 110      | 110            | 1     | 1     |
+| 4      | 0     | 60       | 110            | 1     | 1     |
 | 5      | 6     | 50       | 90             | 1     | 1     |
 
 ###FIFO Second Chance
@@ -64,7 +64,7 @@ cat *.txt gibt den Inhalt jeder txt im aktuellen Verzeichniss aus <br>|grep Acht
 
 *Da sich in Markdown keine gescheiten Matrizen darstellen lassen, schreibe ich die einfach in eine Reihe, ein "|" gibt an, dass hier eigentlich eine neue Zeile anfangen würde.*  
 
-e=Gesamten Resourcen= (9 6 3 6 7) <br>B=Belegte Resourcen= (4 0 0 0 0 | 0 1 2 0 0 | 5 0 0 0 0 | 0 0 0 0 2) <br>N=Noch benötigte Reosourcen= (0 6 3 0 0 | 0 0 0 3 6 | 0 3 0 3 5 | 4 0 1 0 0)<br> v0=Noch verügbare Reosurcen=(0 5 1 6 5)
+e=Gesamten Resourcen= (9 6 3 6 7) <br>B=Belegte Resourcen= (4 0 0 0 0 | 0 1 2 3 0 | 5 0 0 0 0 | 0 0 0 0 2) <br>N=Noch benötigte Reosourcen= (0 6 3 0 0 | 0 0 0 0 6 | 0 3 0 3 5 | 4 0 1 0 0)<br> v0=Noch verügbare Reosurcen=(0 5 1 3 5)
 
 Das System befindet sich in einen sicheren Zustand, da elle Prozesse Terminieren können. Mögliche Termninerungsreihenfolge: CDBA
 
