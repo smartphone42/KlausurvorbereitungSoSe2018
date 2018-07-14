@@ -4,11 +4,8 @@
 
 ### Zählen Sie die Ziele des Kernel-Call Mechanismus auf (3 Punkte)
 
-- Erhöhung der Geschwindigkeit 
 - Vereinfachung der Programmierung
 - Schutz von Speicherbereichen
-- Einsparung von Energie
-- Senkung der Taktfrequenz
 - Entkopplung von User und System
 
 ###Erklären Sie die Bedeutung bzw. Wirkung folgender Befehlssequenz für die Kommandozeile (4 Punkte):
@@ -33,7 +30,7 @@ cat *.txt gibt den Inhalt jeder txt im aktuellen Verzeichniss aus <br>|grep Acht
 
 ### RoundRobin Konstante Zeitscheibe
 
-53,8 präemptiv
+65,8 präemptiv
 
 ### RoundRobin Prioritäten Gesteuert
 
@@ -60,7 +57,7 @@ cat *.txt gibt den Inhalt jeder txt im aktuellen Verzeichniss aus <br>|grep Acht
 | 1      | 9     | 81       | 15             | 0     | 1     |
 | 2      | 1     | 100      | 40             | 0     | 1     |
 | 3      | 4     | 82       | 82             | 1     | 1     |
-| 4      | 0     | 110      | 110            | 1     | 1     |
+| 4      | 0     | 102      | 110            | 1     | 1     |
 | 5      | 6     | 101      | 90             | 0     | 1     |
 
 ## Aufgabe 3
