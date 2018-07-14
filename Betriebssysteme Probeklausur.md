@@ -60,7 +60,7 @@ cat *.txt gibt den Inhalt jeder txt im aktuellen Verzeichniss aus <br>|grep Acht
 | 4      | 0     | 102      | 110            | 1     | 1     |
 | 5      | 6     | 101      | 90             | 0     | 1     |
 
-## Aufgabe 3
+## Aufgabe 4
 
 *Da sich in Markdown keine gescheiten Matrizen darstellen lassen, schreibe ich die einfach in eine Reihe, ein "|" gibt an, dass hier eigentlich eine neue Zeile anfangen würde.*  
 
