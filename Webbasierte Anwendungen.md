@@ -396,7 +396,7 @@ Doctype:  Der HTML Doctype gibt den Dokumententyp eines HTML Dokuments an
 | \<p>       | definiert einen Absatz (zusammengehörigen Text) |
 | \<br>      | erzeugt einen Zeilenumbruch              |
 
-![Strukturelle Tags](/Ressourcen/Strukturelle Tags.PNG)
+![Strukturelle Tags](/Ressourcen/StrukturelleTags.PNG)
 
 
 
