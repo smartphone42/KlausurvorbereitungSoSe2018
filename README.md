@@ -1,6 +1,7 @@
 # KlausurvorbereitungSoSe2018
 - Kein Anspruch auf Vollständigkeit und/oder Korrektheit. 
-- Ergänzungen/Anmerkungen bitte per Telegram/WhatsApp
+- Ergänzungen/Anmerkungen bitte per Telegram/WhatsApp oder MergeRequest.
+- Besonders über die Behebung von Rechschreibfehlern würde ich mich sehr freuen
 
 **Klausurtermine**
 
