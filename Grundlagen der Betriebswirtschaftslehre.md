@@ -110,9 +110,319 @@ Die BWL besteht aus zwei Teilen
 
 Laut eigener Aussage nicht Klausur relevant
 
-## Kapitel 3
+## Kapitel 3 Der  Leistungsbereich
 
-FOLGT
+### Überblick über den Leistungsbreiech
+
+- Materialbereich
+- Produktionsbereich
+- Absatzbereiech
+
+
+
+### Produktionsfaktoren
+
+- sind materielle und immaterielle Güter
+- sind Ausgangsbasis der Leistungserstellung
+- werden zwecks Erstellung des Outputs einer Umwandlung unterzogen
+
+**Volkswirtschaftliche Betrachtungsweise**
+
+Produktionsfaktoren
+
+- Arbeit
+- Boden und Kapital (Infrastruktur)
+- Information/Wissen (Humankapital)
+
+**Betriebswirtschaftliche Betrachtungsweise**
+
+| Elementarfaktoren        | Dispositive Faktoren   |
+| ------------------------ | ---------------------- |
+| Menschliche Arbeitskraft | Leistungsfunktion      |
+| Betriebsmittel           | Planungsfunktion       |
+| Werkstoffe               | Organistationsfunktion |
+|                          | Kontrollfunktion       |
+
+### Elementarfaktoren
+
+Elementarfaktoren werden als objektbezogenene Faktoren bezeichnet. 
+
+#### menschliche Arbeitskraft
+
+Es ist zu unterscheiden zwischen
+
+**Leistungsfähigkeit**
+
+- Fach und Methodenkompetenz
+- Aktivitäts und Handlungskompetenz
+- Sozialkommunikativer Kompetenz
+- Personale Kompetenz
+
+**Leistungsbereitschaft** <br>(Bereitschaft, die individuelle Leistungsfähigkeit voll dem Betrieb zu widmen), beeinflussbar durch Motivationsinstrumente. 
+
+*Motivationsinstrumente haben die Aufgabe, den Unternehmenserfolg durch Erhöhung der Arbeitszufriedenheit und durch Verbesserung der individuellen Leistungsbereitschaft zu steigern.*
+
+| Monetäre Anreize              | Nicht-monetäre Anreize     |
+| ----------------------------- | -------------------------- |
+| Arbeitsentgeld                | Weiterbildung und Aufstieg |
+| Betriebliche Sozialleistungen | Arbeitszeitreglungen       |
+| Erfolgsbeteiligung            | Arbeitsplatzgestaltung     |
+|                               | Arbeitsinhalt              |
+|                               | Betriebsklima              |
+|                               | Führungsstil               |
+
+
+
+#### Betriebsmittel
+
+**Betriebsmittel sind Mittel, die der Leistungserstellung dienen, aber nicht in das Produkt einfließen**
+
+- Maschinen
+- Gebäude
+- Büroausstattung
+
+#### Werkstoffe
+
+**Werkstoffe sind Mittel, die in dem Produkt aufgehen oder bei der Leistungserstellung verbraucht werden**
+
+- Rohstoffe
+- Hilfsstoffe
+- Betriebsstoffe
+
+### Der dispositive Faktor
+
+- nimmt die Unternehmensführung wahr
+- ist menschliche Arbeitskraft in Funktion der Leitung, Planung, Organisation und Kontrolle
+- Die Aufgabe besteht darin, die Elementarfaktoren so zu kombinieren, dass die Unternehmensziele bestmöglich erreicht werden.
+
+### Materialwirtschaft
+
+Umfasst
+
+- Beschaffung/ Einkauf
+- Lagerhaltung
+- Logistik
+- Entsorgung/ Widerverwendung
+
+Aufgabe der Materialwirtschaft ist die Bereitstellung
+
+- der benötigten Materialarten und -qualitäten
+- in den benötigten Mengen
+- zur rechten Zeit und am rechten Ort
+- auf Basis des Produktionsprogramms
+
+**Ziel der Materialwirtschaft ist die Minimierung aller Kosten, die mit der Beschaffung und Bereitstellung von Materialen verbunden sind.**
+
+#### Materialbedarfsplanung
+
+- Programmgesteuerte Verfahren:
+  - Primärbedarf an Endprodukten (ermittelt auf Basis des Produktionsplans)
+  - Sekundärbedarf an Materialien (ermittelt aus dem Primärbedarf und unter Einsatz von Stücklisten).
+- Verbrauchsorientierte Verfahren:
+  - „einfache“ Durchschnittsverfahren (mit oder ohne Gewichtungen) auf Basis der Verbräuche vergangener Perioden
+  - Statistische Verfahren.
+- Grobe Schätzungen.
+
+**⇒ Wirtschaftliches Handeln erfordert differenzierte Planung einzelner Materialien!**
+
+Materialklassifizierung anhand der ABC-Analyse
+
+| Kategorie | Wertanteil | Mengenanteil | Disposition         |
+| --------- | ---------- | ------------ | ------------------- |
+| A-Güter   | hoch       | niedrig      | programmgesteuer    |
+| B-Güter   | mittel     | mittel       | Verbrauchsverfahren |
+| C-Güter   | niedrig    | hoch         | grobe Schätzung     |
+
+#### Materialbestandsplanung
+
+Bestandsarten
+
+- Lagerbestand
+- Buchbestand
+- Inventurbestand
+- Sicherheitsbestand
+- Meldebestand
+- Höchstbestand
+
+Beschaffungsprinzipien
+
+- Einzelbeschaffung
+- Vorratsbeschaffung
+- Fertigungssynchrone Beschaffung
+
+#### Lagerhaltung
+
+Die langfristige Lagerplanung umfasst im Wesentlichen folgende Bereiche:
+
+- Lagerkapazität
+- Lagerstandort
+- Lagerausstattung
+
+##### Bestellmengenplanung
+
+Ziel: Kostenminimierung
+
+Wesentliche Kostenkomponenten:
+
+- Unmittelbare Beschaffungskosten
+- bestellfixe Kosten
+- Lagerkosten
+  - Variable Lagerhaltungskosten
+  - Fehlmengenkosten
+  - (Fixkosten des Lagers: hängen nicht vom Lagerbestand ab).
+
+##### Optimale Bestellmenge
+
+![Optimale Bestellmenge](/Ressourcen/mopt.PNG)
+
+### Produktionswirtschaft
+
+Aufgaben der Produktionswirtschaft
+
+- Gestaltung Produktionssysteme
+- Durchführung Produktionsplanung und Steuererung
+
+#### Produktions- und Kostentheorie
+
+**Das Ziel der Produktionstheorie besteht darin, die funktionalen Zusammenhänge zwischen der Menge der eingesetzten Produktionsfaktoren und der Menge der damit hergestellten Produkte (Ausbringungsmenge) aufzuzeigen.**
+
+**Das Ziel der Kostentheorie besteht darin, die funktionalen Beziehungen zwischen der Ausbringungsmenge und den durch die Produktion entstandenen Kosten darzustellen**
+
+Definition Kosten: **Kosten sind der mit Preisen bewertete Verzehr von Produktionsfaktoren, der durch die betriebliche Leistungserstellung (und -verwertung) verursacht wird.**
+
+#### Produktionsplanung
+
+Ziele
+
+- Minimierung der Durchlaufzeit
+- Minimierung der Kaptialbindung
+- Einhaltung der Liefertermine
+- Optimierung der Kapazitätsauslastung
+- Minimierung der Rüst- und Transportkosten
+
+### Absatzwirtschaft
+
+*„Marketing ist die bewusst marktorientierte Führung des gesamten Unternehmens oder marktorientiertes Entscheidungsverhalten in der Unternehmung.“* 
+
+**Formen des Marketings**
+
+![Formen des Marketings](/Ressourcen/fdm.PNG)
+
+
+
+![](/Ressourcen/absatzdreieck.PNG)
+
+
+
+**Leistungsverwertung in Abhängigkeit von Wirtschaftssystem**
+
+- Planwirtschaft
+  - Leistungsverwertung = Distribution
+  - Ziel: zentrale Planerfüllung
+- Marktwirtschaft
+  - Autonnomieprinzip
+  - Ziel: langfriste Gewinnmaximierung setzt vorraus:
+    - Analyse der Kundenwünsche
+    - besseres Angebot als der Wettbewerb
+
+Unternehmerisches Handeln in Abhängigkeit der Marktgegebenheiten
+
+- ungesättigten Märkte (Verküfermarkt)
+  - Produktionsorientierte Denkweise
+  - Fragestellung der Ausdehnung der Produktion
+- gesättigte Märkte (Käufermarkt)
+  - Verkaufsorientierte Denkweise
+  - Fragestellung der Überwindung von Absatzwiederständen
+
+#### Aufgabe des Marketings
+
+**Ziel des Marketings**
+
+- Marktanteile
+- Umsatzerlös
+- Deckungsbeiträge
+- Produkt- und Unternehmensimage
+
+**Die Marktforschung umfasst**
+
+- Lieferung von Daten (objektiv / subjektiv)
+- Formen in Abhängigkeit vom Bezugszeitraum
+  - Marktanalyse
+  - Marktbeobachtung
+- Formen in Abhängigkeit der Informationsgewinnung
+  - Datenbasis: Primärforschung oder Sekundärforschung
+- Methoden: Befragung, Beobachtung, Panel, Experimente
+- Auswertung mit Prognose.
+
+**Die Marktforschung beantwortet folgende Fragen:**- 
+
+- Wie lässt sich die Nachfragesituation beurteilen?
+- Was sie die Konkurrenzsituation aus?
+- Wie sehen die Prognosen für die Kosten aus?
+- Welche Preispolitik soll umgesetzt werden?
+
+##### 4P- Marketing Mix
+
+- Product (Produktionspolitik)
+- Price (Preispolitik)
+- Promotion (Kommunikationspolitik)
+- Placement (Distributionspolitik)
+
+##### Produktpolitik
+
+- Ausgangspunkt: Produkte verkörpern einen objektiven Grundnutzen und einen subjektiven Zusatznutzen
+- Ziel: Erstellung eines bedarfsgerechten Angebots.
+
+##### Preispolitik
+
+![Preispolitk](/Ressourcen/moneymoney.PNG)
+
+**Preispolitische Strategien**
+
+- Abschöpfungspreise:
+  - hoher Einführungspreis
+  - schnelle Amortisation der Produktentwicklung
+  - Schaffung eines Preisspielraums nach unten
+  - Gefahr durch Markteintritt von Wettbewerbern
+  - geeignet bei rechtlichem Schutz oder technischem Vorsprug
+- Penetrationspreise:
+  - niedriger Einführungspreis
+  - schnelle Erzielung hoher Absatzmengen
+  - lange Amortisationszeit
+  - Abschrecken des Wettbewerbs durch niedrigen Preis
+  - i.d.R. große Kapitalkraft erforderlich.
+
+##### Break even Analyse
+
+„Der Break-even-Point bezeichnet jene kritische Ausbringungsmenge x, bei deren Überschreiten ein Unternehmen die Verlustzone verlässt und in die Gewinnzone eintritt.“ 
+
+![Brake-even-Analyse](/Ressourcen/bea.PNG)
+
+#### Kommunikationspolitik
+
+- Ziele:
+  - informieren
+  - potenzielle Nachfrager gezielt (positiv) beeinflussen
+  - damit Absatzwiderstände brechen
+- Teilbereiche
+  - (Media-)Werbung
+  - Direct Marketing
+  - Sponsoring
+  - Verkaufsförderung (Sales Promotion)
+  - Öffentlichkeitsarbeit (Public Relations).
+
+**Grundsätze der Werbung**
+
+- Warheit
+- Klarheit
+- Wirksamkeit
+- Wirtschaftlichkeit
+
+#### Distributionspolitik
+
+**Durch optimalen Lieferservice soll zuverlässige, flexible und termingerechte Versorgung der Absatzmittler und der Endkunden gewährleistet werden.**
+
+![](/Ressourcen/dp.PNG)
 
 ## Kapitel 4 Unternehmensführung und -steuerung
 
