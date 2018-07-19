@@ -564,13 +564,13 @@ Beinflusst
 
 ##### Rechnungswesen
 
-Externes Renungswesen
+Externes Rechnungswesen
 
 - Finanzbuchhaltung
 - Billanzen
-- Gewinn und Verlistrechnung
+- Gewinn und Verlustrechnung
 
-Internes Rechungsweseen
+Internes Rechnungsweseen
 
 - Kosten und Erlösrechnung
 - Planungsrechnung
@@ -610,7 +610,7 @@ Gewinn vor Zinsen, Steuern und Abschreibungen (EBITDA) <br>
 
   ![cashflow](/Ressourcen/cashflow.PNG)
 
-##Kapitel 5 
+## Kapitel 5 
 
 **Unter Organisation versteht man das Bemühen der Unternehmensleitung, den komplexen Prozess betrieblicher Leistungserstellung und Leistungsverwertung so zu strukturieren, dass die Effizienzverluste auf der Ausführungsebene minimiert werden.**
 
