@@ -4,7 +4,20 @@ Dies ist die Zusammenfassung der Klausur, geschrieben am ersten Prüfungstermin 
 
 ## Teil 1 Theorie (20 Punkte)
 
-Mehrere Theoriefragen auf einfachen niveau. Kein großes Auswendiglerenen nötig, überwiegend Basiswissen. CSS Boxxmodel aufzeichnen!
+Mehrere Theoriefragen auf einfachen niveau. Kein großes Auswendiglerenen nötig, überwiegend Basiswissen.
+
+Ein paar Fragen die dran kamen:
+
+- CSS Boxxmodel aufzeichnen
+- HTML gegeben, DOM-Dokumenten Baum aufzeichnen
+- Unterscheid document.getChildren und document.getChild
+- Nachteile an JDBC
+- Was standartiesiert HTML (nenne sie vier Bereiche)
+- Nenne und erklären Sie eine weitverbreitete Möglichkeit, Nutzerdaten bei der Übertragung zu sichern.
+- Erklären Sie MVP
+- Was ist ein Framework?
+
+
 
 ## Teil 2 Praxis (30 Punkte)
 
